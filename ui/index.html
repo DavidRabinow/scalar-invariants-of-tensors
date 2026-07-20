@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>10D Invariant Search</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0f1419;
+      --panel: #1a222c;
+      --ink: #e8eef4;
+      --muted: #8b9aab;
+      --accent: #3d9cf0;
+      --ok: #3ecf8e;
+      --warn: #e6b84d;
+      --line: #2a3542;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      background:
+        radial-gradient(ellipse 80% 50% at 10% -10%, #1a3050 0%, transparent 55%),
+        radial-gradient(ellipse 60% 40% at 100% 0%, #1a2838 0%, transparent 50%),
+        var(--bg);
+      color: var(--ink);
+    }
+    main {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin: 0 0 6px;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      color: var(--muted);
+      margin: 0 0 28px;
+      line-height: 1.45;
+      max-width: 38rem;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 720px) {
+      .hero { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .big {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 3.2rem;
+      font-weight: 600;
+      line-height: 1;
+      color: var(--ok);
+    }
+    .big span {
+      color: var(--muted);
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
+    .meta {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 12px;
+      line-height: 1.5;
+    }
+    .bar {
+      height: 10px;
+      background: #0c1015;
+      border-radius: 99px;
+      overflow: hidden;
+      margin-top: 14px;
+      border: 1px solid var(--line);
+    }
+    .bar > i {
+      display: block;
+      height: 100%;
+      width: 0%;
+      background: var(--accent);
+      border-radius: 99px;
+      transition: width 0.4s ease;
+    }
+    .status-pill {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 99px;
+      border: 1px solid var(--line);
+      margin-bottom: 12px;
+    }
+    .status-pill.running { color: var(--accent); border-color: var(--accent); }
+    .status-pill.done { color: var(--ok); border-color: var(--ok); }
+    .status-pill.error { color: #f07178; border-color: #f07178; }
+    .status-pill.idle { color: var(--muted); }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    button {
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 18px;
+      cursor: pointer;
+      background: var(--accent);
+      color: #061018;
+    }
+    button.secondary {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+    button:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+    th, td {
+      text-align: left;
+      padding: 10px 8px;
+      border-bottom: 1px solid var(--line);
+    }
+    th {
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    td.name {
+      font-family: "IBM Plex Mono", monospace;
+    }
+    .empty {
+      color: var(--muted);
+      padding: 18px 4px;
+    }
+    .msg {
+      margin-top: 8px;
+      color: var(--ink);
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>10D chiral invariant search</h1>
+    <p class="sub">
+      Live counter while the computer hunts independent “ingredient” formulas.
+      Target from the literature is about <strong>81</strong>. This run uses an expanding
+      starter family of candidates for 15 minutes.
+    </p>
+
+    <div class="controls">
+      <button id="btn-start" type="button">Start 15‑minute search</button>
+      <button id="btn-refresh" class="secondary" type="button">Refresh now</button>
+    </div>
+
+    <div class="hero">
+      <div class="card">
+        <div id="status-pill" class="status-pill idle">idle</div>
+        <div class="label">Solved so far</div>
+        <div class="big"><span id="found">0</span> <span>/ ~<span id="target">81</span></span></div>
+        <div class="bar"><i id="bar-found"></i></div>
+        <div class="meta" id="by-order">by order: —</div>
+      </div>
+      <div class="card">
+        <div class="label">Time</div>
+        <div class="big" style="color: var(--accent)"><span id="elapsed">0</span>s <span>/ <span id="duration">900</span>s</span></div>
+        <div class="bar"><i id="bar-time" style="background: var(--warn)"></i></div>
+        <div class="meta">
+          Random tests: <span id="draws">0</span><br />
+          Candidates in menu: <span id="cands">0</span>
+        </div>
+        <p class="msg" id="message">Click start to begin.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="label">Ingredients found</div>
+      <div id="list-wrap">
+        <p class="empty" id="empty">None yet — waiting for the search.</p>
+        <table id="table" hidden>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Order</th>
+              <th>Found at</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+
+    async function fetchProgress() {
+      const res = await fetch("/api/progress?" + Date.now());
+      if (!res.ok) throw new Error("progress fetch failed");
+      return res.json();
+    }
+
+    function render(p) {
+      const pill = $("status-pill");
+      pill.textContent = p.status || "idle";
+      pill.className = "status-pill " + (p.status || "idle");
+
+      $("found").textContent = p.found_count ?? 0;
+      $("target").textContent = p.target ?? 81;
+      $("elapsed").textContent = Math.floor(p.elapsed_sec ?? 0);
+      $("duration").textContent = Math.floor(p.duration_sec ?? 900);
+      $("draws").textContent = p.draws_used ?? 0;
+      $("cands").textContent = p.candidates_tested ?? 0;
+      $("message").textContent = p.message || "";
+
+      const foundPct = Math.min(100, (100 * (p.found_count || 0)) / (p.target || 81));
+      const timePct = Math.min(100, (100 * (p.elapsed_sec || 0)) / (p.duration_sec || 900));
+      $("bar-found").style.width = foundPct + "%";
+      $("bar-time").style.width = timePct + "%";
+
+      const bo = p.by_order || {};
+      const boText = Object.keys(bo).length
+        ? Object.entries(bo).map(([k, v]) => `order ${k}: ${v}`).join(" · ")
+        : "—";
+      $("by-order").textContent = "by order: " + boText;
+
+      const found = p.found || [];
+      if (!found.length) {
+        $("empty").hidden = false;
+        $("table").hidden = true;
+      } else {
+        $("empty").hidden = true;
+        $("table").hidden = false;
+        $("tbody").innerHTML = found.map((inv) => `
+          <tr>
+            <td>${inv.id}</td>
+            <td class="name">${inv.name}</td>
+            <td>${inv.order}</td>
+            <td>${inv.found_at_sec}s</td>
+          </tr>
+        `).join("");
+      }
+
+      $("btn-start").disabled = p.status === "running";
+    }
+
+    async function refresh() {
+      try {
+        render(await fetchProgress());
+      } catch (e) {
+        $("message").textContent = "Waiting for server… (" + e.message + ")";
+      }
+    }
+
+    $("btn-refresh").onclick = refresh;
+    $("btn-start").onclick = async () => {
+      $("btn-start").disabled = true;
+      $("message").textContent = "Starting search…";
+      try {
+        const res = await fetch("/api/start", { method: "POST" });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || "start failed");
+        $("message").textContent = data.message || "Search running.";
+      } catch (e) {
+        $("message").textContent = e.message;
+        $("btn-start").disabled = false;
+      }
+      refresh();
+    };
+
+    refresh();
+    setInterval(refresh, 1000);
+  </script>
+</body>
+</html>

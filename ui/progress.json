@@ -1,0 +1,68 @@
+{
+  "status": "done",
+  "target": 81,
+  "found_count": 8,
+  "found": [
+    {
+      "id": 1,
+      "name": "tr(T^2)",
+      "order": 4,
+      "found_at_sec": 899.99
+    },
+    {
+      "id": 2,
+      "name": "||G||^2",
+      "order": 4,
+      "found_at_sec": 899.99
+    },
+    {
+      "id": 3,
+      "name": "tr(T^3)",
+      "order": 6,
+      "found_at_sec": 899.99
+    },
+    {
+      "id": 4,
+      "name": "tr(T^4)",
+      "order": 8,
+      "found_at_sec": 899.99
+    },
+    {
+      "id": 5,
+      "name": "tr(M_G^2)",
+      "order": 8,
+      "found_at_sec": 899.99
+    },
+    {
+      "id": 6,
+      "name": "tr(T^5)",
+      "order": 10,
+      "found_at_sec": 899.99
+    },
+    {
+      "id": 7,
+      "name": "tr(T^6)",
+      "order": 12,
+      "found_at_sec": 899.99
+    },
+    {
+      "id": 8,
+      "name": "tr(M_G^3)",
+      "order": 12,
+      "found_at_sec": 899.99
+    }
+  ],
+  "candidates_tested": 19,
+  "draws_used": 8888,
+  "elapsed_sec": 900.0436580181122,
+  "duration_sec": 900,
+  "message": "Time\u2019s up. Found 8 independent starter-family invariants (target ~81). More auto-graphs needed to climb higher.",
+  "by_order": {
+    "4": 2,
+    "6": 1,
+    "8": 2,
+    "10": 1,
+    "12": 2
+  },
+  "started_at": 1784572915.859172
+}
