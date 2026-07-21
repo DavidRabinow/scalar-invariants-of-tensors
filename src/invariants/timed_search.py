@@ -206,6 +206,54 @@ def candidate_catalog() -> list[tuple[str, int, Callable]]:
     cats.append(("tr(M_G^2)", 8, G_to_M_tr2))
     cats.append(("tr(M_G^3)", 12, G_to_M_tr3))
 
+    # Extra T/G family members to push past the original ~8 when possible.
+    def trT7(T, G, q):
+        Tm = ETA[:, None] * T
+        M = Tm @ Tm @ Tm @ Tm
+        return float(np.trace(M @ Tm @ Tm @ Tm))
+
+    def trT8(T, G, q):
+        Tm = ETA[:, None] * T
+        M = Tm @ Tm
+        M2 = M @ M
+        return float(np.trace(M2 @ M2))
+
+    def G_to_M_tr4(T, G, q):
+        Gu = _raise_all(G)
+        M = np.tensordot(G, Gu, axes=([1, 2, 3], [1, 2, 3]))
+        Mm = ETA[:, None] * M
+        A = Mm @ Mm
+        return float(np.trace(A @ A))
+
+    def trT2_trT3(T, G, q):
+        return trT2(T, G, q) * trT3(T, G, q)
+
+    def trT2_trT4(T, G, q):
+        return trT2(T, G, q) * trT4(T, G, q)
+
+    def Gnorm_trT2(T, G, q):
+        return Gnorm(T, G, q) * trT2(T, G, q)
+
+    def Gnorm_trT3(T, G, q):
+        return Gnorm(T, G, q) * trT3(T, G, q)
+
+    def frobenius_T(T, G, q):
+        return _lorentz_frobenius(T)
+
+    def frobenius_T_sq(T, G, q):
+        f = _lorentz_frobenius(T)
+        return f * f
+
+    cats.append(("||T||^2", 4, frobenius_T))
+    cats.append(("[||T||^2]^2", 8, frobenius_T_sq))
+    cats.append(("tr(T^7)", 14, trT7))
+    cats.append(("tr(T^8)", 16, trT8))
+    cats.append(("tr(M_G^4)", 16, G_to_M_tr4))
+    cats.append(("tr(T^2)*tr(T^3)", 10, trT2_trT3))
+    cats.append(("tr(T^2)*tr(T^4)", 12, trT2_trT4))
+    cats.append(("||G||^2*tr(T^2)", 8, Gnorm_trT2))
+    cats.append(("||G||^2*tr(T^3)", 10, Gnorm_trT3))
+
     return cats
 
 

@@ -23,9 +23,27 @@ Physics payoff: the most general Lagrangian depending on the form but not its de
 ## Layout
 
 ```
-src/invariants/
-  three_form_6d.py   # reproduce §4.1 of the base paper (trace variables)
-  utils.py           # random tensors, rank / nullspace helpers
-scripts/
-  run_6d.py          # CLI entrypoint
+src/invariants/          # mathematical core (graphs, Hodge, discovery)
+src/invariant_engine/    # autonomous runner, dashboard, offline checks
+scripts/                 # CLIs + caffeinate launcher
+research_state/          # live_progress.json, events, checkpoints (local)
+docs/AUTONOMOUS_LOCAL.md # overnight / offline / dashboard ops
 ```
+
+## Autonomous local runs (mandatory before overnight)
+
+Full operator guide: [docs/AUTONOMOUS_LOCAL.md](docs/AUTONOMOUS_LOCAL.md).
+
+```bash
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+PYTHONPATH=src python3 -m invariant_engine check-offline
+PYTHONPATH=src python3 -m invariant_engine dashboard   # http://127.0.0.1:8765
+./scripts/run_autonomous_local.sh --preset smoke
+./scripts/status_autonomous_local.sh
+./scripts/stop_autonomous_local.sh
+```
+
+Presets: `--preset smoke` (30m) · `--preset six-hour` · `--preset overnight --offline`
+
+On macOS the launcher wraps the engine in `/usr/bin/caffeinate -dimsu` automatically. Computation is fully local after install; Cursor Agent still needs internet to generate code.

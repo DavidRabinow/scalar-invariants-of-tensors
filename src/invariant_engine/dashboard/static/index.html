@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Invariant Engine — Local Research Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body class="mode-beginner">
+  <header>
+    <div>
+      <h1>Invariant Engine</h1>
+      <p class="sub">Local research dashboard · 6D 3-form ladder (degrees 2–8) · 10D deferred · no cloud</p>
+    </div>
+    <div class="mode-toggle">
+      <button type="button" id="btn-beginner" class="active">Beginner</button>
+      <button type="button" id="btn-technical">Technical</button>
+    </div>
+  </header>
+
+  <div class="controls" aria-label="Safe run controls">
+    <button type="button" data-action="pause">Pause after unit</button>
+    <button type="button" data-action="resume">Resume</button>
+    <button type="button" data-action="checkpoint">Save checkpoint</button>
+    <button type="button" data-action="stop" class="danger">Stop safely</button>
+    <button type="button" data-action="open_report">Open latest report</button>
+    <button type="button" data-action="open_generators">Open generators</button>
+    <button type="button" data-action="open_errors">Open errors</button>
+  </div>
+
+  <main>
+    <section>
+      <h2>Current status</h2>
+      <p><span id="status-pill" class="status-pill">STOPPED</span></p>
+      <div class="kv" id="status-kv"></div>
+    </section>
+
+    <section>
+      <h2>Certified frontier</h2>
+      <p class="beginner-only explain" id="frontier-beginner"></p>
+      <div class="kv" id="frontier-kv"></div>
+      <p class="mono" id="frontier-scope"></p>
+      <pre class="tech-only mono" id="frontier-notes"></pre>
+    </section>
+
+    <section class="wide">
+      <h2>Current task</h2>
+      <p class="beginner-only explain" id="task-beginner"></p>
+      <p class="tech-only mono" id="task-technical"></p>
+    </section>
+
+    <section>
+      <h2>Graph enumeration</h2>
+      <p class="beginner-only explain" id="graphs-beginner"></p>
+      <div class="kv" id="graphs-kv"></div>
+      <pre class="tech-only" id="graphs-ids"></pre>
+    </section>
+
+    <section>
+      <h2>Invariant classification</h2>
+      <p class="beginner-only explain" id="class-beginner"></p>
+      <pre class="tech-only" id="class-technical"></pre>
+    </section>
+
+    <section>
+      <h2>Generators</h2>
+      <p class="beginner-only explain" id="gen-beginner">Accepted generators will appear here when certified.</p>
+      <pre class="tech-only" id="gen-technical"></pre>
+    </section>
+
+    <section>
+      <h2>Relations / syzygies</h2>
+      <div class="kv" id="rel-kv"></div>
+      <pre class="tech-only" id="rel-technical"></pre>
+    </section>
+
+    <section>
+      <h2>Compute status</h2>
+      <div class="kv" id="compute-kv"></div>
+      <p class="mono" id="compute-eta"></p>
+    </section>
+
+    <section>
+      <h2>Validation</h2>
+      <div class="kv" id="val-kv"></div>
+      <pre class="tech-only" id="val-warnings"></pre>
+    </section>
+
+    <section class="wide">
+      <h2>Activity log</h2>
+      <div class="activity" id="activity"></div>
+    </section>
+  </main>
+
+  <div id="toast"></div>
+  <script src="/static/app.js"></script>
+</body>
+</html>

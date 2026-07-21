@@ -46,6 +46,11 @@ Do not present 10D generator lists as credible until Stage 1 tests and Stage 3 6
 ### Remaining
 - Stage 4: rank pipeline on auto graphs (6D then 10D)
 - Stage 5–7: monomials, syzygies, Lorentz tests
-- Stage 8: UI honest metrics
+- Stage 8: UI honest metrics (superseded by `invariant_engine` dashboard — local SSE/polling on 127.0.0.1:8765)
 - Stage 9–10: full 6D generator recovery + report JSON
+
+### Autonomous overnight infrastructure — PASS (2026-07-20)
+- Mandatory before unattended overnight: caffeinate launcher, PID lock, checkpoints, structured progress, localhost dashboard, offline checks
+- Docs: `docs/AUTONOMOUS_LOCAL.md`
+- Do **not** start a long run until acceptance gates in that doc pass
 

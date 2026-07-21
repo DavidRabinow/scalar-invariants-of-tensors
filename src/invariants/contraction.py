@@ -31,7 +31,7 @@ class CompiledContraction:
     def evaluate_dense(self, tensors: list[np.ndarray]) -> float:
         if len(tensors) != self.n_vertices:
             raise ValueError("tensor count mismatch")
-        return float(contract(self.einsum_subscripts, *tensors, optimize=True))
+        return float(contract(self.einsum_subscripts, *tensors, optimize="greedy"))
 
 
 def compile_graph(graph: ContractionGraph) -> CompiledContraction:
@@ -85,3 +85,41 @@ def make_evaluator(
         return compiled.evaluate_dense([T] * compiled.n_vertices)
 
     return compiled, eval_fn
+
+
+def make_evaluator_lorentz(
+    graph: ContractionGraph,
+) -> tuple[CompiledContraction, Callable[[np.ndarray, np.ndarray], float]]:
+    """
+    Lorentzian-style evaluator: alternate lowered / fully-raised copies by vertex.
+
+    Call as ``eval_fn(Td, Tu)`` where ``Tu = raise_dense(Td)``. This matches the
+    chiral quadratic convention (one raised copy) for N=2 and extends it to
+    higher graphs without inserting η on every edge explicitly.
+    """
+    compiled = compile_graph(graph)
+    n = compiled.n_vertices
+
+    def eval_fn(Td: np.ndarray, Tu: np.ndarray) -> float:
+        tensors = [Td if (v % 2 == 0) else Tu for v in range(n)]
+        return compiled.evaluate_dense(tensors)
+
+    return compiled, eval_fn
+
+
+def estimate_largest_intermediate(
+    graph: ContractionGraph,
+    Td: np.ndarray,
+    Tu: np.ndarray,
+) -> float:
+    """Peak einsum intermediate size for the Lorentzian evaluator (elements)."""
+    from opt_einsum import contract_path
+
+    compiled = compile_graph(graph)
+    tensors = [Td if (v % 2 == 0) else Tu for v in range(compiled.n_vertices)]
+    # 'optimal' is combinatorial and can hang for minutes on N=8; greedy is enough
+    # for a RAM safety preflight.
+    _, info = contract_path(
+        compiled.einsum_subscripts, *tensors, optimize="greedy"
+    )
+    return float(info.largest_intermediate)
