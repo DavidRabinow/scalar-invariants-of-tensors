@@ -134,10 +134,16 @@ PRESETS: dict[str, dict[str, Any]] = {
         "enum_5regular_ns": [2, 4],
         "discover_10d_graphs": True,
         "graph_degrees": [4, 6],
-        "graph_n_draws": 80,
-        "n8_climb_degrees": [4, 6, 8, 10],
-        "max_einsum_intermediate": 5.0e7,
-        "description": "12h 10D: climb N=4/6/8/10 with large samples toward ~81.",
+        "graph_n_draws": 96,
+        # Leaner than the 14k-candidate blowup that stalled for ~20h on one sample pass.
+        "n8_climb_degrees": [4, 6, 8, 10, 12],
+        "graph_sample_targets": {"8": 450, "10": 220, "12": 160},
+        "dense_variants": False,
+        "lorentz_modes": ["alt", "half", "first"],
+        "slot_policies": ["pop", "pop0"],
+        "max_einsum_intermediate": 8.0e7,
+        "seed": 53,
+        "description": "12h 10D: expanded N=8..12 samples, controlled variants toward ~81.",
     },
 }
 

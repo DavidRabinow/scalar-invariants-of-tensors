@@ -20,6 +20,7 @@ from .ladder6d import discover_at_degree, verify_paper_generators
 from .ladder10d import (
     LITERATURE_TARGET,
     discover_10d_graphs,
+    prefer_higher_count,
     enumerate_5regular,
     merge_catalog_best,
     run_catalog_search,
@@ -704,6 +705,10 @@ class AutonomousController:
                         self.config.get("max_einsum_intermediate", 5.0e7)
                     ),
                     include_catalog=True,
+                    lorentz_modes=list(self.config.get("lorentz_modes") or []) or None,
+                    slot_policies=list(self.config.get("slot_policies") or []) or None,
+                    sample_targets=self.config.get("graph_sample_targets"),
+                    dense_variants=bool(self.config.get("dense_variants", False)),
                     progress=prog,
                     cancel=lambda: self._stop or self._time_up(),
                 )
@@ -712,6 +717,7 @@ class AutonomousController:
                 raise
             if climb.get("cancelled"):
                 return
+            climb = prefer_higher_count(self.work.get("10d_graph_best"), climb)
             self.work["10d_graph_best"] = climb
             self.work["10d_graphs_done"] = True
             self.bus.state.invariant_classification["10d_graphs"] = climb
@@ -786,11 +792,16 @@ class AutonomousController:
                             self.config.get("max_einsum_intermediate", 5.0e7)
                         ),
                         include_catalog=True,
+                        lorentz_modes=list(self.config.get("lorentz_modes") or []) or None,
+                        slot_policies=list(self.config.get("slot_policies") or []) or None,
+                        sample_targets=self.config.get("graph_sample_targets"),
+                        dense_variants=bool(self.config.get("dense_variants", False)),
                         progress=prog,
                         cancel=lambda: self._stop or self._time_up(),
                     )
                     if climb8.get("cancelled"):
                         return
+                    climb8 = prefer_higher_count(self.work.get("10d_graph_best"), climb8)
                     self.work["10d_n8_climb_done"] = True
                     self.work["10d_graph_best"] = climb8
                     self.bus.state.invariant_classification["10d_graphs"] = climb8

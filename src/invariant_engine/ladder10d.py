@@ -16,6 +16,7 @@ from typing import Any, Callable
 import numpy as np
 
 from invariants.contraction import (
+    LORENTZ_MODES,
     estimate_largest_intermediate,
     make_evaluator_lorentz,
 )
@@ -189,6 +190,22 @@ def _greedy_keep(
     return kept
 
 
+def prefer_higher_count(
+    prev: dict[str, Any] | None, new: dict[str, Any]
+) -> dict[str, Any]:
+    """Keep the stronger climb result so weak redraws cannot erase a best score."""
+    if not prev:
+        return dict(new)
+    if int(new.get("found_count") or 0) >= int(prev.get("found_count") or 0):
+        out = dict(new)
+        out["prior_best_count"] = int(prev.get("found_count") or 0)
+        return out
+    held = dict(prev)
+    held["stale_redraw_count"] = int(new.get("found_count") or 0)
+    held["held_best"] = True
+    return held
+
+
 def discover_10d_graphs(
     *,
     degrees: list[int] | None = None,
@@ -196,18 +213,32 @@ def discover_10d_graphs(
     seed: int = 3,
     max_intermediate: float = DEFAULT_MAX_INTERMEDIATE,
     include_catalog: bool = True,
+    lorentz_modes: list[str] | None = None,
+    slot_policies: list[str] | None = None,
+    sample_targets: dict[int, int] | dict[str, int] | None = None,
+    dense_variants: bool = False,
     progress: Callable[[str, dict[str, Any]], None] | None = None,
     cancel: Callable[[], bool] | None = None,
 ) -> dict[str, Any]:
     """
     Automatic climb: catalog features + 5-regular graph scalars at given N,
     ranked jointly with product filtering.
+
+    Uses multiple Lorentz raise-patterns and slot wirings to grow past a
+    single-convention plateau.
     """
     degrees = list(degrees or [4, 6])
+    # Default: richer modes for higher N where we plateaued.
+    if lorentz_modes is None:
+        lorentz_modes = ["alt", "half", "first", "last"]
+    if slot_policies is None:
+        slot_policies = ["pop", "pop0", "reverse"]
+    targets: dict[int, int] = {}
+    if sample_targets:
+        targets = {int(k): int(v) for k, v in sample_targets.items()}
     t0 = time.time()
     names: list[str] = []
     orders: list[int] = []
-    # Each entry: ("catalog", fn) or ("graph", eval_fn)
     kinds: list[tuple[str, Any]] = []
 
     if include_catalog:
@@ -219,7 +250,6 @@ def discover_10d_graphs(
     skipped: list[dict[str, Any]] = []
     per_degree: dict[str, Any] = {}
 
-    # Probe tensors for intermediate estimates
     rng_probe = np.random.default_rng(seed)
     Td_probe = combo_to_dense(random_chiral_five_form(rng_probe))
     Tu_probe = raise_dense(Td_probe)
@@ -232,40 +262,96 @@ def discover_10d_graphs(
                 f"10D: prepare graphs at N={n}…",
                 {"stage": "graph_prep", "degree": n},
             )
-        enum = load_or_enumerate_graphs(n, form_rank=5, progress=progress)
+        expand_to = targets.get(n)
+        enum = load_or_enumerate_graphs(
+            n,
+            form_rank=5,
+            progress=progress,
+            expand_to=expand_to,
+            sample_target=int(expand_to or 120),
+        )
         graphs = enum["graphs"]
         kept_here = 0
         skipped_here = 0
+        # Don't explode candidate count: richer variants only where they help.
+        if n <= 4:
+            modes, policies = ["alt"], ["pop"]
+        elif n == 6:
+            modes, policies = ["alt", "half", "first"], ["pop", "pop0"]
+        elif n == 8:
+            modes, policies = list(lorentz_modes), list(slot_policies)
+        elif n == 10:
+            modes, policies = ["alt", "half", "first"], ["pop", "pop0"]
+        else:
+            modes, policies = ["alt", "half"], ["pop", "pop0"]
+        if dense_variants:
+            modes = list(lorentz_modes)
+            policies = list(slot_policies)
         for gi, g in enumerate(graphs):
             if cancel and cancel():
                 return {"cancelled": True, "elapsed_sec": time.time() - t0}
-            try:
-                li = estimate_largest_intermediate(g, Td_probe, Tu_probe)
-            except Exception as exc:  # noqa: BLE001
-                skipped.append({"id": g.canonical_id, "reason": str(exc), "n": n})
-                skipped_here += 1
-                continue
-            if li > max_intermediate:
-                skipped.append(
-                    {
-                        "id": g.canonical_id,
-                        "reason": "intermediate_cap",
-                        "largest_intermediate": li,
-                        "n": n,
-                    }
-                )
-                skipped_here += 1
-                continue
-            try:
-                _, ev = make_evaluator_lorentz(g)
-            except Exception as exc:  # noqa: BLE001
-                skipped.append({"id": g.canonical_id, "reason": str(exc), "n": n})
-                skipped_here += 1
-                continue
-            names.append(f"G{n}:{g.canonical_id}")
-            orders.append(int(n))
-            kinds.append(("graph", ev))
-            kept_here += 1
+            for mode in modes:
+                for policy in policies:
+                    # Mild thinning only — denser than the old plateau pass.
+                    if not dense_variants:
+                        if n >= 8 and policy != "pop" and (gi % 2) != 0:
+                            continue
+                        if n >= 8 and mode not in ("alt", "half") and (gi % 3) != 0:
+                            continue
+                        if n >= 12 and mode != "alt" and (gi % 2) != 0:
+                            continue
+                        if n >= 14 and (gi % 2) != 0:
+                            continue
+                    try:
+                        li = estimate_largest_intermediate(
+                            g, Td_probe, Tu_probe, mode=mode, slot_policy=policy
+                        )
+                    except Exception as exc:  # noqa: BLE001
+                        skipped.append(
+                            {
+                                "id": g.canonical_id,
+                                "reason": str(exc),
+                                "n": n,
+                                "mode": mode,
+                                "policy": policy,
+                            }
+                        )
+                        skipped_here += 1
+                        continue
+                    if li > max_intermediate:
+                        skipped.append(
+                            {
+                                "id": g.canonical_id,
+                                "reason": "intermediate_cap",
+                                "largest_intermediate": li,
+                                "n": n,
+                                "mode": mode,
+                                "policy": policy,
+                            }
+                        )
+                        skipped_here += 1
+                        continue
+                    try:
+                        _, ev = make_evaluator_lorentz(
+                            g, mode=mode, slot_policy=policy
+                        )
+                    except Exception as exc:  # noqa: BLE001
+                        skipped.append(
+                            {
+                                "id": g.canonical_id,
+                                "reason": str(exc),
+                                "n": n,
+                                "mode": mode,
+                                "policy": policy,
+                            }
+                        )
+                        skipped_here += 1
+                        continue
+                    tag = f"G{n}:{g.canonical_id}:{mode}:{policy}"
+                    names.append(tag)
+                    orders.append(int(n))
+                    kinds.append(("graph", ev))
+                    kept_here += 1
             if progress and (gi + 1) % 10 == 0:
                 progress(
                     f"10D: N={n} compiled {gi + 1}/{len(graphs)} "
@@ -282,6 +368,9 @@ def discover_10d_graphs(
             "evaluated": kept_here,
             "skipped": skipped_here,
             "from_cache": enum.get("from_cache"),
+            "modes": modes,
+            "policies": policies,
+            "expanded": enum.get("expanded"),
         }
 
     n_cand = len(kinds)
@@ -321,7 +410,7 @@ def discover_10d_graphs(
             except Exception:
                 values[i, j] = 0.0
         values[i, :] = np.nan_to_num(values[i, :], nan=0.0, posinf=0.0, neginf=0.0)
-        if progress and ((i + 1) % max(1, n_draws // 4) == 0 or i + 1 == n_draws):
+        if progress and ((i + 1) % max(1, n_draws // 16) == 0 or i + 1 == n_draws or i == 0):
             progress(
                 f"10D: sample {i + 1}/{n_draws}",
                 {
@@ -355,7 +444,7 @@ def discover_10d_graphs(
         "n_draws": n_draws,
         "n_candidates": n_cand,
         "per_degree": per_degree,
-        "skipped": skipped[:20],
+        "skipped": skipped[:30],
         "skipped_total": len(skipped),
         "elapsed_sec": time.time() - t0,
         "target": LITERATURE_TARGET,

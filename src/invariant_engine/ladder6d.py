@@ -32,6 +32,40 @@ def _cache_path(n_vertices: int, form_rank: int) -> Path:
     return CACHE_DIR / f"graphs_N{n_vertices}_r{form_rank}.json"
 
 
+def _graphs_from_cache_payload(
+    data: dict[str, Any], form_rank: int
+) -> list[ContractionGraph]:
+    return [
+        ContractionGraph(
+            multiplicity=tuple(tuple(row) for row in m),
+            form_rank=form_rank,
+        )
+        for m in data["multiplicities"]
+    ]
+
+
+def _write_graph_cache(
+    path: Path,
+    *,
+    n_vertices: int,
+    form_rank: int,
+    graphs: list[ContractionGraph],
+    sampled: bool,
+    attempts: int | None = None,
+) -> None:
+    payload: dict[str, Any] = {
+        "n_vertices": n_vertices,
+        "form_rank": form_rank,
+        "nonisomorphic_count": len(graphs),
+        "multiplicities": [g.multiplicity for g in graphs],
+        "canonical_ids": [g.canonical_id for g in graphs],
+        "sampled": sampled,
+    }
+    if attempts is not None:
+        payload["attempts"] = attempts
+    path.write_text(json.dumps(payload), encoding="utf-8")
+
+
 def load_or_enumerate_graphs(
     n_vertices: int,
     form_rank: int = 3,
@@ -40,20 +74,96 @@ def load_or_enumerate_graphs(
     force: bool = False,
     allow_sample: bool = False,
     sample_target: int = 120,
+    expand_to: int | None = None,
 ) -> dict[str, Any]:
-    """Enumerate graphs, caching multiplicity matrices so N=8 is only computed once."""
+    """Enumerate graphs, caching multiplicity matrices so N=8 is only computed once.
+
+    If ``expand_to`` is set and the cache is smaller, sample more graphs and merge
+    them into the cache (used to break plateaus without discarding known graphs).
+    """
     ensure_state_dirs()
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
     path = _cache_path(n_vertices, form_rank)
+    target = int(expand_to) if expand_to is not None else int(sample_target)
+
     if path.exists() and not force:
         data = json.loads(path.read_text(encoding="utf-8"))
-        graphs = [
-            ContractionGraph(
-                multiplicity=tuple(tuple(row) for row in m),
-                form_rank=form_rank,
+        graphs = _graphs_from_cache_payload(data, form_rank)
+        if expand_to is not None and len(graphs) < target and (
+            allow_sample or (form_rank >= 5 and n_vertices >= 8) or data.get("sampled")
+        ):
+            from invariants.graphs import sample_contraction_graphs
+            import networkx as nx
+
+            need = target - len(graphs)
+            if progress:
+                progress(
+                    f"Expanding N={n_vertices} cache {len(graphs)}→{target}…",
+                    {
+                        "stage": "sample_expand",
+                        "degree": n_vertices,
+                        "have": len(graphs),
+                        "target": target,
+                    },
+                )
+            # Fresh seed so we don't replay the same stub matches.
+            extra = sample_contraction_graphs(
+                n_vertices,
+                form_rank,
+                target=need + max(40, need // 2),
+                seed=n_vertices * 97 + form_rank * 13 + len(graphs) * 31 + 101,
+                max_attempts=max(80_000, need * 400),
+                progress=progress,
             )
-            for m in data["multiplicities"]
-        ]
+            known = {g.canonical_id for g in graphs}
+            # For n>6, canonical_id is WL-based (same as the climb tags). Exact
+            # nx.isomorphism against hundreds of graphs is too slow to expand.
+            use_iso = n_vertices <= 6
+            known_nx = [g.to_networkx() for g in graphs] if use_iso else []
+            added = 0
+            for g in extra["graphs"]:
+                if g.canonical_id in known:
+                    continue
+                if use_iso:
+                    Gnx = g.to_networkx()
+                    if any(nx.is_isomorphic(Gnx, H) for H in known_nx):
+                        continue
+                    known_nx.append(Gnx)
+                graphs.append(g)
+                known.add(g.canonical_id)
+                added += 1
+                if len(graphs) >= target:
+                    break
+            _write_graph_cache(
+                path,
+                n_vertices=n_vertices,
+                form_rank=form_rank,
+                graphs=graphs,
+                sampled=True,
+                attempts=int(data.get("attempts") or 0) + int(extra.get("attempts") or 0),
+            )
+            if progress:
+                progress(
+                    f"Expanded N={n_vertices} cache to {len(graphs)} (+{added})",
+                    {
+                        "stage": "sample_expand_done",
+                        "degree": n_vertices,
+                        "graph_count": len(graphs),
+                        "added": added,
+                    },
+                )
+            return {
+                "n_vertices": n_vertices,
+                "form_rank": form_rank,
+                "nonisomorphic_count": len(graphs),
+                "graphs": graphs,
+                "canonical_ids": [g.canonical_id for g in graphs],
+                "from_cache": False,
+                "sampled": True,
+                "expanded": True,
+                "added": added,
+            }
+
         if progress:
             progress(
                 f"Loaded {len(graphs)} cached graphs for N={n_vertices}"
@@ -83,20 +193,18 @@ def load_or_enumerate_graphs(
         enum = sample_contraction_graphs(
             n_vertices,
             form_rank,
-            target=sample_target,
+            target=target,
             seed=n_vertices * 17 + form_rank,
             progress=progress,
         )
-        payload = {
-            "n_vertices": n_vertices,
-            "form_rank": form_rank,
-            "nonisomorphic_count": enum["nonisomorphic_count"],
-            "multiplicities": [g.multiplicity for g in enum["graphs"]],
-            "canonical_ids": enum.get("canonical_ids", [g.canonical_id for g in enum["graphs"]]),
-            "sampled": True,
-            "attempts": enum.get("attempts"),
-        }
-        path.write_text(json.dumps(payload), encoding="utf-8")
+        _write_graph_cache(
+            path,
+            n_vertices=n_vertices,
+            form_rank=form_rank,
+            graphs=enum["graphs"],
+            sampled=True,
+            attempts=enum.get("attempts"),
+        )
         enum["from_cache"] = False
         return enum
 
@@ -106,15 +214,13 @@ def load_or_enumerate_graphs(
             {"stage": "enum", "degree": n_vertices},
         )
     enum = enumerate_contraction_graphs(n_vertices, form_rank=form_rank)
-    payload = {
-        "n_vertices": n_vertices,
-        "form_rank": form_rank,
-        "nonisomorphic_count": enum["nonisomorphic_count"],
-        "multiplicities": [g.multiplicity for g in enum["graphs"]],
-        "canonical_ids": enum.get("canonical_ids", [g.canonical_id for g in enum["graphs"]]),
-        "sampled": False,
-    }
-    path.write_text(json.dumps(payload), encoding="utf-8")
+    _write_graph_cache(
+        path,
+        n_vertices=n_vertices,
+        form_rank=form_rank,
+        graphs=enum["graphs"],
+        sampled=False,
+    )
     enum["from_cache"] = False
     return enum
 
