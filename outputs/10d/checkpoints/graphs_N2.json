@@ -1,0 +1,12 @@
+{
+  "n_vertices": 2,
+  "form_rank": 5,
+  "nonisomorphic_count": 1,
+  "canonical_ids": [
+    "M[5]"
+  ],
+  "elapsed_sec": 0.0005028247833251953,
+  "proof_status": "exact combinatorial enumeration",
+  "note": "5-regular loopless connected multigraphs; not yet quotiented by self-duality identities",
+  "_saved_at": "2026-08-06T05:55:16Z"
+}

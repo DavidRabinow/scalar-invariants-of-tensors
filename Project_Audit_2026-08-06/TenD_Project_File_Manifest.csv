@@ -1,0 +1,205 @@
+File,Version,Purpose,Dependencies,Execution_status,Tests_VT_count,Supersedes_or_superseded_by,Outputs_produced,SHA256,Size_bytes,mtime_utc
+Research/2001 (1).pdf,2001 (1).pdf,,,SOURCE EXISTS,,,,03c5d970f96bda42b6c39c38e858412c65f6d9fac315ecdd0267bed95212c24a,668076,2026-07-17T15:08:51Z
+Research/6D_3Form_Project.nb,6D_3Form_Project.nb,,,UNKNOWN,,,,131de04c9e6caa03c67ba700cb312d4b7ae9cc6e543eced0539d71b8670b2b61,14155,2026-08-03T04:42:09Z
+Research/AntisymmetricPForms.wl,AntisymmetricPForms.wl,Exact sparse antisym p-form representation,,OBSERVED RUN,5,,,d4b73aef9cebf1f487b58bde5c93ffeb435ca3ee31106f7b5aacea7ec5faead7,4644,2026-08-03T04:39:42Z
+Research/AppendixRelations6D.wl,AppendixRelations6D.wl,Appendix A syzygies exact holdouts,,OBSERVED RUN,7,,,cae2a749a6ed6405c63651259660c30eb7e232b091213bfdd9227105028337a0,4899,2026-08-03T05:33:26Z
+Research/Degree8CanonicalGraphKeys.wl,Degree8CanonicalGraphKeys.wl,1753 canonical graph keys data,,OBSERVED RUN,0,,,085e6dc3233bdafde53329fd580ed01c36742b6cf3d386a6aa1d670114d56ebe,106936,2026-08-05T22:30:41Z
+Research/FunctionalIndependence6D.wl,FunctionalIndependence6D.wl,Exact Jacobian rank for five generators,,OBSERVED RUN,5,,,46cbcc18315cf9c73e300eac75103ae74d3ea8894d6f19369423b81ec0b67a76,5539,2026-08-03T04:59:42Z
+Research/GraphEnumeration6D.wl,GraphEnumeration6D.wl,3-regular graph enum (broken loader),,SUPERSEDED,6,SUPERSEDED by GraphEnumeration6D_FIXED.wl,,93344630e3fb39f4c52ff84089a18838856485c4fe9adf5ffa532d2b64b2d356,9861,2026-08-03T05:40:42Z
+Research/GraphEnumeration6D_FIXED.wl,GraphEnumeration6D_FIXED.wl,3-regular graph enum Gate 5,,OBSERVED RUN,6,,,a9240642de84e85633db04de4d91b97e7955064c5fcc9877c2db79985a689f2b,9862,2026-08-03T14:17:52Z
+Research/InvariantBenchmarks.wl,InvariantBenchmarks.wl,O(d)/SO(4) benchmarks (Dot bug),,SUPERSEDED,12,SUPERSEDED by InvariantBenchmarks_CORRECTED_V2.wl,,21838131abcd8fae511b3fc3cb207d08cd410eb4bc1746ad363391cf7d6edc75,9311,2026-08-03T14:50:49Z
+Research/InvariantBenchmarks_CORRECTED_V2.wl,InvariantBenchmarks_CORRECTED_V2.wl,Corrected O(d)/SO(4) benchmarks,,OBSERVED RUN,12,,,05b3efd51f5a7df29fe7fe7d4fdbfbf2fb462c10bf866297555e2097e8f10f98,9339,2026-08-03T14:55:03Z
+Research/MetricContractions6D.wl,MetricContractions6D.wl,6D metric contractions; Eqs (4.1)-(4.4),,OBSERVED RUN,8,,,8e8248abfefc8c92dae6ee78c2bd366b3ab1d709df65b2d5bf19be9855cb9d52,9506,2026-08-03T05:25:49Z
+Research/New Folder With Items/Beginner_Companion_to_Machine_Learning_Invariants_of_Tensors.pdf,Beginner_Companion_to_Machine_Learning_Invariants_of_Tensors.pdf,,,SOURCE EXISTS,,,,588249c952b11c34407b0118064e3296154407f7459524c1d5f348dddbc858a1,95701,2026-07-03T19:31:17Z
+Research/New Folder With Items/Molecular_Dynamics_Math_Notes.pdf,Molecular_Dynamics_Math_Notes.pdf,,,SOURCE EXISTS,,,,516473c142f945ba2e6f3cbc9c7b94560fdb8399fc47b7d041610b21591e1d70,107945,2026-07-03T15:07:19Z
+Research/New Folder With Items/Untitled document-31.pdf,Untitled document-31.pdf,,,SOURCE EXISTS,,,,61593ab31368ba310ea0ae4f7844e7c898d7ba6e76abd217017c89ea216100ce,78344,2026-07-17T23:24:15Z
+Research/New Folder With Items/invariants_78.pdf,invariants_78.pdf,,,SOURCE EXISTS,,,,742b51875e2108dea7730c90039720772309cc4ace4e620949450e3181722f52,68903,2026-07-23T15:14:50Z
+Research/New Folder With Items/reclaiming_attention_case_study.pdf,reclaiming_attention_case_study.pdf,,,SOURCE EXISTS,,,,7851f0c84a6d9901eb14b2731cbc5bbf717b1114be19139211510a60cd363ffb,6168710,2026-07-20T20:57:01Z
+Research/New Folder With Items/reclaiming_attention_feinstein_30_day_case_study.pdf,reclaiming_attention_feinstein_30_day_case_study.pdf,,,SOURCE EXISTS,,,,ec9d7db56ed44b87b01fbdefd7e2e0788a5c82d266a25209c93e3dda833397dc,1002442,2026-07-20T22:30:52Z
+Research/New Folder With Items/regents_to_tensor_invariants_guide.pdf,regents_to_tensor_invariants_guide.pdf,,,SOURCE EXISTS,,,,7725ae93466be7eba6ee1e61197176c665d7efe856da74ff176335ee140c4e19,291007,2026-07-03T21:46:00Z
+Research/New Folder With Items/tensor_paper_page_paragraph_companion_v2.pdf,tensor_paper_page_paragraph_companion_v2.pdf,,,SOURCE EXISTS,,,,d34a8088bbe78839187f600ff3905fe3038b92816fd4524572973ced484a9280,1286592,2026-07-03T23:58:43Z
+Research/New Folder With Items/tensor_paper_paragraph_by_paragraph_companion.pdf,tensor_paper_paragraph_by_paragraph_companion.pdf,,,SOURCE EXISTS,,,,a5f99cfe40d17cde54a1fe24f84d2381b39b2d843c340a15f68485433f6dd089,556143,2026-07-03T23:53:04Z
+Research/New Folder With Items/what_i_built.pdf,what_i_built.pdf,,,SOURCE EXISTS,,,,49fa826318b4e4316761fbdd0b2bd2f7ea3fa58c52737a68fdaab8137c2fdd8d,58117,2026-07-21T21:47:43Z
+Research/RESEARCH_LOG.md,RESEARCH_LOG.md,,,SOURCE EXISTS,,IDENTICAL to RESEARCH_LOGv4.md,,b385693d43cd6f8d9d07a2f8df4ca8e307f14c6a38860420ca84280648ecacee,11048,2026-08-03T14:34:42Z
+Research/RESEARCH_LOG_2.md,RESEARCH_LOG_2.md,,,SOURCE EXISTS,,IDENTICAL to RESEARCH_LOGv4.md,,b385693d43cd6f8d9d07a2f8df4ca8e307f14c6a38860420ca84280648ecacee,11048,2026-08-03T15:58:26Z
+Research/RESEARCH_LOGv3.md,RESEARCH_LOGv3.md,,,SOURCE EXISTS,,IDENTICAL to RESEARCH_LOGv4.md,,b385693d43cd6f8d9d07a2f8df4ca8e307f14c6a38860420ca84280648ecacee,11048,2026-08-03T16:34:07Z
+Research/RESEARCH_LOGv4.md,RESEARCH_LOGv4.md,,,SOURCE EXISTS,,,,b385693d43cd6f8d9d07a2f8df4ca8e307f14c6a38860420ca84280648ecacee,11048,2026-08-03T17:29:53Z
+Research/TenDChiralFiveForm_Representation_Literature_Gate.md,TenDChiralFiveForm_Representation_Literature_Gate.md,,,SOURCE EXISTS,,,,5f5b4592baf86cae66bf2d11a5b2aec7c2a1cad7155edab18a4541f9b9bb4d64,15597,2026-08-03T15:58:20Z
+Research/TenDDegree10Foundations_V1.wl,TenDDegree10Foundations_V1.wl,Degree-10 product subspace foundations,,OBSERVED RUN,16,,,85f07701a770933c4995f02971df50cbe3db6b4225c94daebfbd388fb518b716,8100,2026-08-06T05:00:32Z
+Research/TenDDegree4Invariants_V1.wl,TenDDegree4Invariants_V1.wl,,,SUPERSEDED,13,SUPERSEDED by V4,,186315f4bdc0049979251bbe4fc5e7a742a8ed9c60b21d7b59ec9a0e37800983,12943,2026-08-03T16:08:46Z
+Research/TenDDegree4Invariants_V2.wl,TenDDegree4Invariants_V2.wl,,,SUPERSEDED,13,SUPERSEDED by V4,,ea2418526f2134a265a134acb99b643eb60d52bd1c7e448008f70c28d26188bf,12950,2026-08-03T16:13:58Z
+Research/TenDDegree4Invariants_V3.wl,TenDDegree4Invariants_V3.wl,,,SUPERSEDED,15,SUPERSEDED by V4,,ec29ac78e5dd53abeb48e2aaed2e5459bdd903b2fd374771a44626d181511ea1,14111,2026-08-03T16:21:30Z
+Research/TenDDegree4Invariants_V4.wl,TenDDegree4Invariants_V4.wl,Degree-4 I4=tr M^2 graph gate,,OBSERVED RUN,16,,,0b600b556c579330c32da3b8bb44829a1d76209552c30aa1fe620d6a6da5d247,14454,2026-08-03T16:28:48Z
+Research/TenDDegree6Catalog.csv,TenDDegree6Catalog.csv,,,OBSERVED RUN,,,,b00cc3f037701ba89fe5815b5e87994257880922740e20baec3c124d96bf0228,4546,2026-08-05T21:41:26Z
+Research/TenDDegree6Catalog_V1.wl,TenDDegree6Catalog_V1.wl,,,SUPERSEDED,12,SUPERSEDED by V2 (K6 sign),,8a4767bc3bd65ae1ed639191d11ba4d0c128234989223b6a432a8b7f27bc8b1c,6344,2026-08-05T21:27:34Z
+Research/TenDDegree6Catalog_V2.wl,TenDDegree6Catalog_V2.wl,54-graph degree-6 catalog corrected signs,,OBSERVED RUN,12,,,c52f7bee266ea5e398d381e9e1205405d599782b9c3968b7a09f92d21d6ee418,6340,2026-08-05T21:41:03Z
+Research/TenDDegree6GraphBasis_BatchA_V1.wl,TenDDegree6GraphBasis_BatchA_V1.wl,,,OBSERVED RUN,12,,,417c2f8ae4c4e397c5080af4d6d1993ac4641ab770fa73a70961b8f250fff652,10055,2026-08-05T16:54:25Z
+Research/TenDDegree6GraphBasis_BatchB1_V1.wl,TenDDegree6GraphBasis_BatchB1_V1.wl,,,OBSERVED RUN,12,,,f18973e2b6af0dbda59aaae750c27ec0053cb6cc093143473c0b8fe64c9309d5,5133,2026-08-05T17:24:11Z
+Research/TenDDegree6GraphBasis_BatchB2_V1.wl,TenDDegree6GraphBasis_BatchB2_V1.wl,,,OBSERVED RUN,12,,,e29141fd4dcb65dc9f31d82f82c802abdb374a0038d23e04952e0f55fe333c1f,5237,2026-08-05T17:52:58Z
+Research/TenDDegree6GraphBasis_BatchC_V1.wl,TenDDegree6GraphBasis_BatchC_V1.wl,,,OBSERVED RUN,12,,,7c606ef1c5a328101a14e76a5e832f9445491c83d686d306ffc2320f4c8f9444,5723,2026-08-05T18:02:40Z
+Research/TenDDegree6GraphBasis_FinalK6_V1.wl,TenDDegree6GraphBasis_FinalK6_V1.wl,,,SUPERSEDED,14,SUPERSEDED by V2,,7c7c18f14af35cb285b96c80285f85ede876aaab586e5774b81484caeec8da45,11973,2026-08-05T20:36:46Z
+Research/TenDDegree6GraphBasis_FinalK6_V2.wl,TenDDegree6GraphBasis_FinalK6_V2.wl,,,OBSERVED RUN,14,,,b7646ebad277740960ccc796dbcf7bf76a2e5f796f82a9a0c22c5686c9ec3cff,12542,2026-08-05T20:45:54Z
+Research/TenDDegree6GraphEnumeration_V1.wl,TenDDegree6GraphEnumeration_V1.wl,5-regular N=6 graph census,,OBSERVED RUN,10,,,b050f4404ac3ff2710903123c1a1d299800707ad4731947779509226d5464145,7468,2026-08-03T16:41:33Z
+Research/TenDDegree6N1050Invariant_V1.wl,TenDDegree6N1050Invariant_V1.wl,,,SUPERSEDED,12,SUPERSEDED by V2,,ba677c4e9d766ba2d6fb6be3bacd82064ce7fb81a93f64bc79f1c8e6704af07c,13926,2026-08-03T17:40:54Z
+Research/TenDDegree6N1050Invariant_V2.wl,TenDDegree6N1050Invariant_V2.wl,I6^(2) via N1050 corrected,,OBSERVED RUN,13,,,61ee09a71e4e0d21373d4a466a59c389c990e6e33dc94f41fb1c71da081a074c,14513,2026-08-03T18:11:58Z
+Research/TenDDegree6TraceInvariant_V1.wl,TenDDegree6TraceInvariant_V1.wl,I6^(1)=Tr M^3,,OBSERVED RUN,11,,,942f8339e1f47acad8fdeeda4ba72461b8b3d9954fed1ea9feb1930f8069f155,9617,2026-08-03T17:29:22Z
+Research/TenDDegree8BasisValidation_V1.wl,TenDDegree8BasisValidation_V1.wl,Validate 7 degree-8 basis directions,,OBSERVED RUN,16,,,1c88de1f589db39ae273433746d0da292a2206de830c17bce5476718c4dcb9ac,6712,2026-08-06T04:41:27Z
+Research/TenDDegree8ContractionPlanning_V1.wl,TenDDegree8ContractionPlanning_V1.wl,,,OBSERVED RUN,14,,,337dcc6710da8f560775f80970cecdd54963a1e5de3e3bdc984731405a0e06d2,8994,2026-08-06T03:30:10Z
+Research/TenDDegree8DiscoveryBatchA_V1.wl,TenDDegree8DiscoveryBatchA_V1.wl,,,OBSERVED RUN,13,,,e4c204193845827cc4ecc451587284061a2699173acd73d2a892572341ec4a25,11420,2026-08-06T03:53:56Z
+Research/TenDDegree8DiscoveryBatchB_V1.wl,TenDDegree8DiscoveryBatchB_V1.wl,,,OBSERVED RUN,12,,,e36013c112e68cef9a61e2b08aad97762f3f7e244c1df47e63e377ec14b571f5,5137,2026-08-06T04:04:28Z
+Research/TenDDegree8DiscoveryBatchC_V1.wl,TenDDegree8DiscoveryBatchC_V1.wl,,,OBSERVED RUN,12,,,ee975d55e9bc2af130231f885ef588a111cfb33f78f2529b3aa52f31e4065327,5109,2026-08-06T04:11:34Z
+Research/TenDDegree8DiscoveryBatchD_V1.wl,TenDDegree8DiscoveryBatchD_V1.wl,,,OBSERVED RUN,12,,,7cf85c27a5e259a2401d403d9f7ad757176a83527147d9a38bc47b4f77feabb9,5435,2026-08-06T04:22:26Z
+Research/TenDDegree8FormulaCatalog_V1.wl,TenDDegree8FormulaCatalog_V1.wl,Export degree-8 formulas,,OBSERVED RUN,15,,,5a140e9ae76419c6ee9a9d19696cf9007c8a52c1e313de4b7bc5eba2e22bbdfc,10206,2026-08-06T04:52:45Z
+Research/TenDDegree8GraphEnumeration_V1.wl,TenDDegree8GraphEnumeration_V1.wl,Burnside degree-8 graph census,,OBSERVED RUN,13,,,ce701d1c652f91fb3ef9612ac5cda4e698f7068853c8195c0e5957938c43f935,7720,2026-08-05T22:30:30Z
+Research/TenDDegree8InvariantFormulaCatalog.csv,TenDDegree8InvariantFormulaCatalog.csv,,,OBSERVED RUN,,,,901b6a33a822b49ba0d079be5351ed915df3d64e56f258cb33596aa77e4f12ee,20511,2026-08-06T04:53:07Z
+Research/TenDDegree8InvariantFormulaCatalog.txt,TenDDegree8InvariantFormulaCatalog.txt,,,OBSERVED RUN,,,,1759a23b01543f29d05709d5c428bde14503fce69551c8dfb5089c38cd16f9a1,21538,2026-08-06T04:53:07Z
+Research/TenDLorentzianFoundations_V1.wl,TenDLorentzianFoundations_V1.wl,10D Hodge/self-dual foundations V1,,SUPERSEDED,15,SUPERSEDED by TenDLorentzianFoundations_V2.wl,,93a1e9ca053117354a57f6cec92b41966c705f7624419b07ce5d9a73f83e7315,16587,2026-08-03T15:24:31Z
+Research/TenDLorentzianFoundations_V2.wl,TenDLorentzianFoundations_V2.wl,10D Hodge/self-dual foundations V2,,OBSERVED RUN,15,,,c01d2dcf8ef1bd2e4c00e859052b70cf815d650ed2632efccbbc98d222eee21f,16731,2026-08-03T15:34:48Z
+Research/TenDRepresentationTargets.wl,TenDRepresentationTargets.wl,Hilbert/Euler table check from Cederwall,,OBSERVED RUN,9,,,105ae4934782042ec9bf8a3712e994e6a8eb186b9da2d4fa91e9fd4c5d2d5f76,3899,2026-08-03T15:58:38Z
+Research/regents_to_tensor_invariants_guide_edited.pdf,regents_to_tensor_invariants_guide_edited.pdf,,,SOURCE EXISTS,,,,4fa7e9a597bd631bda36096a20415f36f06ba11e3903f376e6fcd6476d2eff05,333956,2026-07-03T21:56:46Z
+MIT/.gitattributes,.gitattributes,,,SOURCE EXISTS,,,,1a1dbe176bc233b499d35a57db7513f2941c99ab9759f177830c9149be99005b,66,2026-07-27T22:48:47Z
+MIT/.gitignore,.gitignore,,,SOURCE EXISTS,,,,0188bf8452ee9938b96d46951feede7d9d70d3b6285a4ebd08bb7b2f74ec15e9,124,2026-07-27T22:48:47Z
+MIT/IMPLEMENTATION_PLAN.md,IMPLEMENTATION_PLAN.md,,,SOURCE EXISTS,,,,03a7bfb6133a84cf83aeaa89e5ad1010dc53cbb47957b528399e70b38795633e,2714,2026-07-27T22:48:47Z
+MIT/MIGRATION.md,MIGRATION.md,,,SOURCE EXISTS,,,,484361a1c71097abc49f9726758b6c04480d12f576559580960e3fae00c1a048,1317,2026-08-06T05:55:21Z
+MIT/NOTES.md,NOTES.md,,,SOURCE EXISTS,,,,9f160f77637432ef5e4df4bba8633ef3319af2b479d75490a93033ae61a91fc6,3684,2026-07-27T22:48:47Z
+MIT/Project_Audit_2026-08-06/rerun_smoke.txt,rerun_smoke.txt,,,OBSERVED RUN,,,,ade09d9d0c942f87826b4b8fde64a47279e834ad982ea9d215ba12441eab00f3,203,2026-08-06T13:22:23Z
+MIT/Project_Audit_2026-08-06/sha256_all_research.txt,sha256_all_research.txt,,,OBSERVED RUN,,,,c44fce292794b00bd1da374808286af76e253c6bbb8592419c894472822bcbc0,5982,2026-08-06T13:22:23Z
+MIT/Project_Audit_2026-08-06/sha256_mit_core.txt,sha256_mit_core.txt,,,OBSERVED RUN,,,,cbf13a22c96b5a764dd5cf02cfba6f4f34b3a84d0b3bd6b2f4396c5f3f01728c,6760,2026-08-06T13:22:23Z
+MIT/Project_Audit_2026-08-06/sha256_research_top.txt,sha256_research_top.txt,,,OBSERVED RUN,,,,b7ba48bcd1ba45cf33a5c13d43101f92621e9e44dfe8f091e4d2a55c44093e6d,4505,2026-08-06T13:18:58Z
+MIT/Project_Audit_2026-08-06/supporting/MIT_10d_explore_summary.json,MIT_10d_explore_summary.json,,,SOURCE EXISTS,,,,5a8815a59810f494dae4aa0db4eca98eb6ed15772a76516f018c3b30680b9890,3109,2026-08-06T13:23:36Z
+MIT/Project_Audit_2026-08-06/supporting/MIT_10d_results.md,MIT_10d_results.md,,,SOURCE EXISTS,,,,0b0be3cc190f569d634455dce014ab5eeb7af83d6dea5c81feb891baf8db7c80,1029,2026-08-06T13:23:36Z
+MIT/Project_Audit_2026-08-06/supporting/MIT_6d_generators.json,MIT_6d_generators.json,,,SOURCE EXISTS,,,,8f42d750bcf6fa6bcd2cbebe046df1516d43fc222bfbb48536223d6d59a66664,412,2026-08-06T13:23:36Z
+MIT/Project_Audit_2026-08-06/supporting/MIT_6d_ranks.json,MIT_6d_ranks.json,,,SOURCE EXISTS,,,,21f2a821faafd004202053694e03c265cc59038661166f5c997f6991a8a837eb,1984,2026-08-06T13:23:36Z
+MIT/Project_Audit_2026-08-06/supporting/MIT_6d_reproduction.md,MIT_6d_reproduction.md,,,SOURCE EXISTS,,,,ac5f12f24ecc8c3e113bd1204e9f56f4e6cfaac2407c87b86a51333b206f0dd4,1201,2026-08-06T13:23:36Z
+MIT/Project_Audit_2026-08-06/supporting/MIT_initial_audit.md,MIT_initial_audit.md,,,SOURCE EXISTS,,,,663bac4cdb5b26d824a6593143101e1eae1f650e411347aa3b4a7fc6e9b9b77b,7651,2026-08-06T13:23:36Z
+MIT/Project_Audit_2026-08-06/supporting/RESEARCH_LOGv4.md,RESEARCH_LOGv4.md,,,SOURCE EXISTS,,,,b385693d43cd6f8d9d07a2f8df4ca8e307f14c6a38860420ca84280648ecacee,11048,2026-08-06T13:23:36Z
+MIT/Project_Audit_2026-08-06/supporting/TenDChiralFiveForm_Representation_Literature_Gate.md,TenDChiralFiveForm_Representation_Literature_Gate.md,,,SOURCE EXISTS,,,,5f5b4592baf86cae66bf2d11a5b2aec7c2a1cad7155edab18a4541f9b9bb4d64,15597,2026-08-06T13:23:36Z
+MIT/Project_Audit_2026-08-06/supporting/TenDDegree6Catalog.csv,TenDDegree6Catalog.csv,,,OBSERVED RUN,,,,b00cc3f037701ba89fe5815b5e87994257880922740e20baec3c124d96bf0228,4546,2026-08-06T13:23:36Z
+MIT/Project_Audit_2026-08-06/supporting/TenDDegree8InvariantFormulaCatalog.csv,TenDDegree8InvariantFormulaCatalog.csv,,,OBSERVED RUN,,,,901b6a33a822b49ba0d079be5351ed915df3d64e56f258cb33596aa77e4f12ee,20511,2026-08-06T13:23:36Z
+MIT/Project_Audit_2026-08-06/supporting/TenDDegree8InvariantFormulaCatalog.txt,TenDDegree8InvariantFormulaCatalog.txt,,,OBSERVED RUN,,,,1759a23b01543f29d05709d5c428bde14503fce69551c8dfb5089c38cd16f9a1,21538,2026-08-06T13:23:36Z
+MIT/Project_Audit_2026-08-06/supporting/rerun_smoke.txt,rerun_smoke.txt,,,OBSERVED RUN,,,,ade09d9d0c942f87826b4b8fde64a47279e834ad982ea9d215ba12441eab00f3,203,2026-08-06T13:23:36Z
+MIT/Project_Audit_2026-08-06/supporting/sha256_all_research.txt,sha256_all_research.txt,,,OBSERVED RUN,,,,c44fce292794b00bd1da374808286af76e253c6bbb8592419c894472822bcbc0,5982,2026-08-06T13:23:36Z
+MIT/Project_Audit_2026-08-06/supporting/sha256_mit_core.txt,sha256_mit_core.txt,,,OBSERVED RUN,,,,cbf13a22c96b5a764dd5cf02cfba6f4f34b3a84d0b3bd6b2f4396c5f3f01728c,6760,2026-08-06T13:23:36Z
+MIT/README.md,README.md,,,SOURCE EXISTS,,,,1cd619a5d82206c505ed62d8680183fa44037df08c171307d33e0306506c0844,4643,2026-08-06T05:55:21Z
+MIT/SYSTEM.md,SYSTEM.md,,,SOURCE EXISTS,,,,5cee81292fb8407992d7e71af93f105ac265dad1176973d88995b807e55d1437,2547,2026-07-27T22:48:47Z
+MIT/benchmarks/paper_6d_expected.json,paper_6d_expected.json,,,SOURCE EXISTS,,,,0fafbc6921349df1b3ebae77473d3d8654712c6345c141131baf832a57cb7d15,413,2026-08-06T05:25:53Z
+MIT/checkpoints/graphs/graphs_N10_r3.json,graphs_N10_r3.json,,,OBSERVED RUN,,,,ba1411a2ba78d7e2f6900dd0ab9099a14f36ccc902c97d7c1dcff69ad9313588,6165,2026-08-06T05:54:43Z
+MIT/checkpoints/graphs/graphs_N2_r3.json,graphs_N2_r3.json,,,OBSERVED RUN,,,,cbd23a70aae6076bcafeba1b73daaeaea3fd445ab65fdf8eb83005c5fa4d6ba5,142,2026-08-06T05:44:34Z
+MIT/checkpoints/graphs/graphs_N4_r3.json,graphs_N4_r3.json,,,OBSERVED RUN,,,,41808500aa93d2504725c8fb6edb0f7b1a79cebadc82f4c1f872693930df6ef6,268,2026-08-06T05:44:34Z
+MIT/checkpoints/graphs/graphs_N6_r3.json,graphs_N6_r3.json,,,OBSERVED RUN,,,,ec3af4deb28954d0e075f05c5c0edeac261c24f7b760cdb6446e024d71a54db2,1064,2026-08-06T05:44:34Z
+MIT/checkpoints/graphs/graphs_N8_r3.json,graphs_N8_r3.json,,,OBSERVED RUN,,,,9094adefefd245955fc7d4000ccb8408f30786a398be9d61d43a5b051dd3ae2b,5557,2026-08-06T05:44:34Z
+MIT/configs/self_dual_five_form_10d.yaml,self_dual_five_form_10d.yaml,,,SOURCE EXISTS,,,,c41c5904a6a572e5d6c0d091a8db1851a43ba9ec5774cc0e47dd5608398c5f67,661,2026-08-06T05:25:21Z
+MIT/configs/three_form_6d.yaml,three_form_6d.yaml,,,SOURCE EXISTS,,,,e43764895bdcdceffc2b836895762070ad8d9b97cbd9156853ceba4a622a9a0b,395,2026-08-06T05:25:19Z
+MIT/docs/AUTONOMOUS_LOCAL.md,AUTONOMOUS_LOCAL.md,,,SOURCE EXISTS,,,,e4b65ccb3ab2a9912b4603a61a616cd3ac6125ea5a3317b9e0bdac093741258e,3798,2026-07-28T23:33:02Z
+MIT/docs/invariants_78.json,invariants_78.json,,,SOURCE EXISTS,,,,532cadca61471847b8c2f7479de70b9a92b6448dfedd905dd14cd23243793bb5,12435,2026-07-28T23:33:02Z
+MIT/docs/invariants_78.pdf,invariants_78.pdf,,,SOURCE EXISTS,,,,742b51875e2108dea7730c90039720772309cc4ace4e620949450e3181722f52,68903,2026-07-28T23:33:02Z
+MIT/outputs/10d/checkpoints/graphs_N2.json,graphs_N2.json,,,OBSERVED RUN,,,,c77e0cb9f24b24d3ea7c7dfa5862afa3143e1462121482268c98e5b3a4a3ee45,337,2026-08-06T05:55:16Z
+MIT/outputs/10d/checkpoints/graphs_N4.json,graphs_N4.json,,,OBSERVED RUN,,,,1948da317ae60478d904f2134010dc747b379d88ea4af726fdbac90fba56d564,412,2026-08-06T05:55:16Z
+MIT/outputs/10d/checkpoints/self_duality.json,self_duality.json,,,SOURCE EXISTS,,,,bc46e6707941fdef16a7e2949ab0271cac9eca9081feaa3fbad2d26779709cdc,303,2026-08-06T13:07:05Z
+MIT/outputs/10d/explore_summary.json,explore_summary.json,,,SOURCE EXISTS,,,,5a8815a59810f494dae4aa0db4eca98eb6ed15772a76516f018c3b30680b9890,3109,2026-08-06T13:07:05Z
+MIT/outputs/10d/generators.json,generators.json,,,SOURCE EXISTS,,,,1195729e355fadf5d879e7967f1e0fe88cf31fd981540d6f21a29ecfca758888,156,2026-08-06T13:07:05Z
+MIT/outputs/10d/graphs.json,graphs.json,,,SOURCE EXISTS,,,,8272a8a2aba428a6371a32c3ca84951fbf6f1786554d9aeb3caeac7e4af72c30,819,2026-08-06T13:07:05Z
+MIT/outputs/10d/ranks.json,ranks.json,,,SOURCE EXISTS,,,,44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a,2,2026-08-06T13:07:05Z
+MIT/outputs/10d/syzygies.json,syzygies.json,,,SOURCE EXISTS,,,,4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945,2,2026-08-06T13:07:05Z
+MIT/outputs/6d/generators.json,generators.json,,,OBSERVED RUN,,,,8f42d750bcf6fa6bcd2cbebe046df1516d43fc222bfbb48536223d6d59a66664,412,2026-08-06T13:05:16Z
+MIT/outputs/6d/graphs.json,graphs.json,,,OBSERVED RUN,,,,0d9faa652355b88fef6ebbc1db24498a418d1342b9cb776d5d7de9d03cd02dad,47067,2026-08-06T13:05:16Z
+MIT/outputs/6d/ranks.json,ranks.json,,,OBSERVED RUN,,,,21f2a821faafd004202053694e03c265cc59038661166f5c997f6991a8a837eb,1984,2026-08-06T13:05:16Z
+MIT/outputs/6d/syzygies.json,syzygies.json,,,OBSERVED RUN,,,,263df599295690deb285b73476c8b47c345ff984bc1bc114fe94d0bae10ff3da,16300,2026-08-06T13:05:16Z
+MIT/references/machine_learning_invariants_of_tensors.pdf,machine_learning_invariants_of_tensors.pdf,,,SOURCE EXISTS,,,,03c5d970f96bda42b6c39c38e858412c65f6d9fac315ecdd0267bed95212c24a,668076,2026-08-06T05:15:44Z
+MIT/reports/10d_methodology.md,10d_methodology.md,,,SOURCE EXISTS,,,,2fa7ebe481fe3c40badade3b159c93700064a28940116de2378ad830b0d8038c,1216,2026-08-06T13:07:05Z
+MIT/reports/10d_results.md,10d_results.md,,,SOURCE EXISTS,,,,0b0be3cc190f569d634455dce014ab5eeb7af83d6dea5c81feb891baf8db7c80,1029,2026-08-06T13:07:05Z
+MIT/reports/6d_reproduction.md,6d_reproduction.md,,,SOURCE EXISTS,,,,ac5f12f24ecc8c3e113bd1204e9f56f4e6cfaac2407c87b86a51333b206f0dd4,1201,2026-08-06T13:05:16Z
+MIT/reports/initial_audit.md,initial_audit.md,,,SOURCE EXISTS,,,,663bac4cdb5b26d824a6593143101e1eae1f650e411347aa3b4a7fc6e9b9b77b,7651,2026-08-06T05:58:38Z
+MIT/requirements.txt,requirements.txt,,,OBSERVED RUN,,,,c6d1e4e5e9ab4c3935d85d39d4dbcb20759b9b5d80211625e48b83bbc45b372f,89,2026-08-06T05:27:26Z
+MIT/research_state/.gitignore,.gitignore,,,SOURCE EXISTS,,,,240a3e0d37d2e86b614063f5347eb02d4f99ca6c254de6b82871ff8d95532a7d,14,2026-07-27T22:48:47Z
+MIT/research_state/cache/graphs_N2_r3.json,graphs_N2_r3.json,,,SOURCE EXISTS,,,,cbd23a70aae6076bcafeba1b73daaeaea3fd445ab65fdf8eb83005c5fa4d6ba5,142,2026-08-06T05:15:16Z
+MIT/research_state/cache/graphs_N4_r3.json,graphs_N4_r3.json,,,SOURCE EXISTS,,,,41808500aa93d2504725c8fb6edb0f7b1a79cebadc82f4c1f872693930df6ef6,268,2026-08-06T05:15:16Z
+MIT/research_state/cache/graphs_N6_r3.json,graphs_N6_r3.json,,,SOURCE EXISTS,,,,ec3af4deb28954d0e075f05c5c0edeac261c24f7b760cdb6446e024d71a54db2,1064,2026-08-06T05:18:58Z
+MIT/research_state/live_progress.json,live_progress.json,,,SOURCE EXISTS,,,,f4123feaff7d7c419a8392507c9c41fd6ed11b5cbd002dc9e6e7ea3f1485ecd1,3284,2026-08-06T05:15:16Z
+MIT/research_state/logs/run_5b6b16938416.log,run_5b6b16938416.log,,,SOURCE EXISTS,,,,dcaa4b280a6574dc4711cac394cf5464ac196df40f26ece8bbad27101ec2ec69,74,2026-08-06T05:15:16Z
+MIT/run_pipeline.py,run_pipeline.py,,,RERUN PASSED,,,,0754863f0002859eefae42e3562dcbf7dd00a4eed200491c6d09e282156c5a89,6545,2026-08-06T06:00:42Z
+MIT/scripts/brain_monitor.py,brain_monitor.py,,,SOURCE EXISTS,,,,445921e8eb1809fa5b82a47a1868b67fb35196594a395e374cb2f247cdca38a6,4006,2026-07-27T22:48:47Z
+MIT/scripts/brain_tick.sh,brain_tick.sh,,,SOURCE EXISTS,,,,c340301fa383a30896be1244b3240b04cda031d6b5beb09a698d02430077f445,1097,2026-07-27T22:48:47Z
+MIT/scripts/lib/autonomous_common.sh,autonomous_common.sh,,,SOURCE EXISTS,,,,08863a978bfd3938cc41028bfa5b08d8564c0d5356075c41569b9a4cb76b4d41,3037,2026-07-27T22:48:47Z
+MIT/scripts/run_10d.py,run_10d.py,,,SOURCE EXISTS,,,,e73d7cebf75a10ad576e0e60cc9b21f0169eb4d2d090e7812dd35db1c8c09127,1507,2026-07-27T22:48:47Z
+MIT/scripts/run_6d.py,run_6d.py,,,SOURCE EXISTS,,,,05e4729aa96edbecbc3a8f5651ae028f93c2bc16f9e708169a799e6d267bf4fa,1611,2026-07-27T22:48:47Z
+MIT/scripts/run_autonomous_local.sh,run_autonomous_local.sh,,,SOURCE EXISTS,,,,a82e7b1e486b8f8bb9b13b5709e17108ade02fb9f1baa2728ff1aa06ed56c6d6,6234,2026-07-27T22:48:47Z
+MIT/scripts/run_ladder.py,run_ladder.py,,,SOURCE EXISTS,,,,9bd6435dded94a55f0ecf82ab7b3cda84e1dcbb230e27b4c0b2b3bd672d5bf42,1548,2026-07-27T22:48:47Z
+MIT/scripts/search_ui_server.py,search_ui_server.py,,,SOURCE EXISTS,,,,ffe58d2fff1956266130fa8e3c28c443167019da3db5136d5f6744bb2158880c,2425,2026-07-27T22:48:47Z
+MIT/scripts/start_brain_monitor.sh,start_brain_monitor.sh,,,SOURCE EXISTS,,,,a8459dfedd9496b1502e50742aa022dac51f28b36f64a8f292071011694e5649,3461,2026-07-27T22:48:47Z
+MIT/scripts/start_forever_daemon.sh,start_forever_daemon.sh,,,SOURCE EXISTS,,,,817b47110393153d8ac34c6121c84dac01ec3b84120fdd1017e75871cc422b28,2988,2026-07-27T22:48:47Z
+MIT/scripts/status_autonomous_local.sh,status_autonomous_local.sh,,,SOURCE EXISTS,,,,4ea07c5c2cf9e8bdbc05e4d6db5b4de0ad5d142d86a7cabbb3e2b066e84136f4,1638,2026-07-27T22:48:47Z
+MIT/scripts/stop_autonomous_local.sh,stop_autonomous_local.sh,,,SOURCE EXISTS,,,,3dfb7cb3a5818ebe74a73786f9c82ac251f59b8ce1091e0af014883e9421da49,1467,2026-07-27T22:48:47Z
+MIT/scripts/supervise_autonomous_local.sh,supervise_autonomous_local.sh,,,SOURCE EXISTS,,,,7275de4b08183961af7b697efb9d162f39fabedd43623416cd3b327d57d0948a,2714,2026-07-27T22:48:47Z
+MIT/src/invariant_engine/__init__.py,__init__.py,,,SOURCE EXISTS,,,,9b4e0392caadd99d7493c417891651449c12e4d875e7580626e8ece42fff3e54,100,2026-07-27T22:48:47Z
+MIT/src/invariant_engine/__main__.py,__main__.py,,,SOURCE EXISTS,,,,307299fda7b77d22c64cb51430ec75e5f59d78e9c948786afb3b2544fe45e4b7,79,2026-07-27T22:48:47Z
+MIT/src/invariant_engine/atomic_io.py,atomic_io.py,,,SOURCE EXISTS,,,,7bed08483f3ed82238d8bc808cd5ed3a7d7b18f89992082d58ece6c6908c2966,1422,2026-07-27T22:48:47Z
+MIT/src/invariant_engine/autonomous.py,autonomous.py,,,SOURCE EXISTS,,,,7e40585f811f943a806da3e7c0d34317524c14503e4f78015530a9f2258b90e0,58356,2026-07-27T22:48:47Z
+MIT/src/invariant_engine/brain.py,brain.py,,,SOURCE EXISTS,,,,91b251af5a9841e358fe816fce1da729979aad2aea0c38e74dd5a4098d3f89c8,4361,2026-07-27T22:48:47Z
+MIT/src/invariant_engine/checkpoint.py,checkpoint.py,,,SOURCE EXISTS,,,,d65b5479f0b79795dfecd0c8e0bfc8babab56b2998c9375f9d2fb87d18aa21e8,1648,2026-07-27T22:48:47Z
+MIT/src/invariant_engine/cli.py,cli.py,,,SOURCE EXISTS,,,,fad346a9a67beef5436737acc1e95527c55668197692090642363370f6e15c59,3158,2026-07-27T22:48:47Z
+MIT/src/invariant_engine/compute_status.py,compute_status.py,,,SOURCE EXISTS,,,,b92689902413617dd60764d761cdbf219f7f6b2f53f4835f5aea95bf4016605e,1543,2026-07-27T22:48:47Z
+MIT/src/invariant_engine/controls.py,controls.py,,,SOURCE EXISTS,,,,3be522e5543ad649d24644862c8e355ea72e9347e1150108a6edc0e855b0c593,1776,2026-07-27T22:48:47Z
+MIT/src/invariant_engine/dashboard/__init__.py,__init__.py,,,SOURCE EXISTS,,,,82af92c96827fe8193ed8c8f03135a8b90fc2573d4ae16093856be9bfb79a515,115,2026-07-27T22:48:47Z
+MIT/src/invariant_engine/dashboard/server.py,server.py,,,SOURCE EXISTS,,,,62a34c57f2ee17eacb0fc31781fc0029a5058c0dc082686495a3d0d915e9205f,4065,2026-07-27T22:48:47Z
+MIT/src/invariant_engine/dashboard/static/app.js,app.js,,,SOURCE EXISTS,,,,c177ae590cef9d67d6ce0f2506887fa79cf4ee1a5699f91ebdc622d2cb04fc66,9721,2026-07-27T22:48:47Z
+MIT/src/invariant_engine/dashboard/static/index.html,index.html,,,SOURCE EXISTS,,,,31c9e2310e4923b171a2153f54780fe437804bf52d2c37c3f8930046b623e568,3236,2026-07-27T22:48:47Z
+MIT/src/invariant_engine/dashboard/static/style.css,style.css,,,SOURCE EXISTS,,,,4f9ca0f85ad008bc67ecb37b05272d66847ca321c4f53c171ee71c9b78161b27,4070,2026-07-27T22:48:47Z
+MIT/src/invariant_engine/heal.py,heal.py,,,SOURCE EXISTS,,,,165e7d92410f65fe6bf70f790554792d45b7f824647f3187454fcde0303574fa,4394,2026-07-27T22:48:47Z
+MIT/src/invariant_engine/ladder10d.py,ladder10d.py,,,SOURCE EXISTS,,,,2e8f718e5cc1c0aaa0af014c4f52240d432bac1542183165f27c910f544cc83e,15956,2026-07-27T22:48:47Z
+MIT/src/invariant_engine/ladder6d.py,ladder6d.py,,,SOURCE EXISTS,,,,2f91a8aae6010f041ba71a3920132ce68219f2513dae500ed4be285627089835,13444,2026-07-27T22:48:47Z
+MIT/src/invariant_engine/offline.py,offline.py,,,SOURCE EXISTS,,,,5fd3d9a868a6a90c2ff886d21ed989ac4a9799db7d0159d6db4793b93b6f0965,8704,2026-07-27T22:48:47Z
+MIT/src/invariant_engine/paths.py,paths.py,,,SOURCE EXISTS,,,,bd46cf3c8acffed3d791121398a705a572296357eed0ade28ce6616249f67b60,969,2026-07-27T22:48:47Z
+MIT/src/invariant_engine/power.py,power.py,,,SOURCE EXISTS,,,,2dcee9f055e44a61d15594e53cecdb0d3e57ef64ea6ffabc8b75075121ca6593,3196,2026-07-27T22:48:47Z
+MIT/src/invariant_engine/presets.py,presets.py,,,SOURCE EXISTS,,,,a530763301c85714d86b0e014c1e47baaadc6913186d5e9ad4275eb969725053,5396,2026-07-27T22:48:47Z
+MIT/src/invariant_engine/progress.py,progress.py,,,SOURCE EXISTS,,,,bbe6fd55533edd855b85eb84d433d0781a053791c78bc767bf61906641f47ffb,11721,2026-07-27T22:48:47Z
+MIT/src/invariants/__init__.py,__init__.py,,,SOURCE EXISTS,,,,79dd490c95fe9e2be94285923f83c120f2fff58fba149676843907300fce3f01,670,2026-07-27T22:48:47Z
+MIT/src/invariants/contraction.py,contraction.py,,,SOURCE EXISTS,,,,81989aae1869fd2805a945a1fdcd3975c1e81286a960a55deda43d0d78bab6de,4873,2026-07-27T22:48:47Z
+MIT/src/invariants/discover.py,discover.py,,,SOURCE EXISTS,,,,42f542218d7c6438430387ef7ceef294f2455372c8ae2207873b08af4b85366d,4502,2026-07-27T22:48:47Z
+MIT/src/invariants/five_form_10d.py,five_form_10d.py,,,SOURCE EXISTS,,,,b6b30814382bd4ff8f22f30d976c86755b5fd0664be8ba5de5d1574017db84a2,4326,2026-07-27T22:48:47Z
+MIT/src/invariants/graphs.py,graphs.py,,,SOURCE EXISTS,,,,52c79adde30b1153b2f6f4841f62b9e04d6401c0615631894a86dfaf4e11f323,9405,2026-07-27T22:48:47Z
+MIT/src/invariants/hodge10.py,hodge10.py,,,SOURCE EXISTS,,,,b7d982597fce5f93ec2f11399e59363efffd11d16545ff2fae9802f19ecc9375,10351,2026-07-27T22:48:47Z
+MIT/src/invariants/ladder.py,ladder.py,,,SOURCE EXISTS,,,,4679c9558c41bfb703fc4583bb09ca916209fc0b37101a286bb3642f628c2349,2822,2026-07-27T22:48:47Z
+MIT/src/invariants/three_form_6d.py,three_form_6d.py,,,SOURCE EXISTS,,,,d2bd15a9ae7c0984b36b2650581396073d20c2f0e449962c4217f9ec9f45a35d,7010,2026-07-27T22:48:47Z
+MIT/src/invariants/timed_search.py,timed_search.py,,,SOURCE EXISTS,,,,03a559003248e45622a489a384b60c3ef583ec617f8be20a0576e4ba4c58eac9,12853,2026-07-27T22:48:47Z
+MIT/src/invariants/utils.py,utils.py,,,SOURCE EXISTS,,,,3cd9c25a7b94840563d589aa75a1d9bb092857cd3735b97109a48bac6c7e71e6,1838,2026-07-27T22:48:47Z
+MIT/tensor_invariants/__init__.py,__init__.py,,,SOURCE EXISTS,,,,e1bef8a168927b815dc199cf6487bfd61262740a2bb026906e365996d781789c,363,2026-08-06T05:20:34Z
+MIT/tensor_invariants/antisymmetric_tensors.py,antisymmetric_tensors.py,,,SOURCE EXISTS,,,,85e7c1af8999a443159af146fe22299e261cc18cef74d789fb10fa80a07461fe,3913,2026-08-06T05:22:37Z
+MIT/tensor_invariants/checkpointing.py,checkpointing.py,,,SOURCE EXISTS,,,,2064404de00e1877f25e2f375be5ee41dae78b3dee8b051fa191b0edd5324dbe,951,2026-08-06T05:25:11Z
+MIT/tensor_invariants/configuration.py,configuration.py,,,SOURCE EXISTS,,,,938367758641aeceb022393b0f83b2e94728196df3912a287aca5a2e179c6ce5,4988,2026-08-06T05:33:27Z
+MIT/tensor_invariants/contraction_compiler.py,contraction_compiler.py,,,SOURCE EXISTS,,,,2a50b2a39f3d0f59c34da4a1a408df082c9b8ae979b5728304e439e1c38a58ae,3065,2026-08-06T05:54:35Z
+MIT/tensor_invariants/contraction_evaluator.py,contraction_evaluator.py,,,SOURCE EXISTS,,,,b5bb4e435e121c4d34e538ed3b8c05493e912746608bdfd757bd70cd8464bd6f,2072,2026-08-06T05:23:09Z
+MIT/tensor_invariants/explore_10d.py,explore_10d.py,,,SOURCE EXISTS,,,,de4c3e4c55f650979da56aad2a5957131c24db1ab440d90e6303a7d88c850426,8379,2026-08-06T05:55:38Z
+MIT/tensor_invariants/finite_field.py,finite_field.py,,,SOURCE EXISTS,,,,1cfc29465eab677fa4b683c6caec044b1356a37e484a8a1e671d47c8e406f44b,2339,2026-08-06T05:20:34Z
+MIT/tensor_invariants/generator_selection.py,generator_selection.py,,,RERUN PASSED,,,,0ae2296de8ef1d7c908ba8ab9d1d3af0fe9b0ee3246d982ad2b7b2b0736a98d1,10844,2026-08-06T05:54:30Z
+MIT/tensor_invariants/graph_canonicalization.py,graph_canonicalization.py,,,SOURCE EXISTS,,,,eedb37959f873b475c92fef064344a0364c24fc2bc96344dbcd853ffb87e5011,4777,2026-08-06T05:54:28Z
+MIT/tensor_invariants/graph_enumeration.py,graph_enumeration.py,,,SOURCE EXISTS,,,,dc9e6a1b11cd87b9f9013c5d9d44e7f20f1341bd5ce431ea07f484b498e72ed5,7284,2026-08-06T05:42:42Z
+MIT/tensor_invariants/monomial_basis.py,monomial_basis.py,,,SOURCE EXISTS,,,,0d720d572a6c4106b9bac4f7d909c6866cdbc21b3853e95768a87e8561d667a4,2315,2026-08-06T05:23:09Z
+MIT/tensor_invariants/nullspace.py,nullspace.py,,,SOURCE EXISTS,,,,51bac4d85b3d67f60938fe9d053ca45f5d3096c9be71b787fb6732535eb91735,3922,2026-08-06T05:21:04Z
+MIT/tensor_invariants/numerical_rank.py,numerical_rank.py,,,SOURCE EXISTS,,,,3cb03cb788bc6879189cc7fa657ae4485f9aeb1083d6e093300690c7364480e3,3011,2026-08-06T05:21:28Z
+MIT/tensor_invariants/rational_reconstruction.py,rational_reconstruction.py,,,SOURCE EXISTS,,,,0c0baba72089d2e477dfd7ba4778684d7f47f915e4944fbfbcd391f1bd171bfe,5288,2026-08-06T05:21:28Z
+MIT/tensor_invariants/reporting.py,reporting.py,,,SOURCE EXISTS,,,,c40d577481feeb0333f380cf2bba1c7aa85b3ce90bc346ca0873e8fd077fc032,6443,2026-08-06T06:00:58Z
+MIT/tensor_invariants/self_duality.py,self_duality.py,,,SOURCE EXISTS,,,,e2a5c1265da49f8ce5df9d013f8b068c3ca990fd99fb9b2cfa17f9caaaa58ac5,4887,2026-08-06T05:24:42Z
+MIT/tensor_invariants/syzygies.py,syzygies.py,,,SOURCE EXISTS,,,,049af7d656870b4004529af1ff0c04c0fc839e64ff10c8a33fad0c62f884dd64,6186,2026-08-06T05:24:24Z
+MIT/tensor_invariants/tensor_spaces.py,tensor_spaces.py,,,SOURCE EXISTS,,,,756fb22eee8bcb299f2ac61d1c8e133b8aaabc96dda5c6ba0a92e4992c348d43,1261,2026-08-06T05:22:37Z
+MIT/tensor_invariants/validation.py,validation.py,,,SOURCE EXISTS,,,,a7540cbefae703be747ff0cb297ce63ac33c307343233548f5d1c35bc2747f7c,4384,2026-08-06T05:48:41Z
+MIT/tests/__init__.py,__init__.py,,,SOURCE EXISTS,,,,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,0,2026-07-27T22:48:47Z
+MIT/tests/test_autonomous_infra.py,test_autonomous_infra.py,,,SOURCE EXISTS,,,,afaf22f7ae7f032d25e4e35074611853692dbe41d721d9c0745d228936e6c00f,5905,2026-07-27T22:48:47Z
+MIT/tests/test_autonomous_smoke.py,test_autonomous_smoke.py,,,SOURCE EXISTS,,,,2c3525b640e740f3433497a1b60fa768ef7312299d08e05fc1519903ffa32afb,3941,2026-07-27T22:48:47Z
+MIT/tests/test_contraction_evaluation.py,test_contraction_evaluation.py,,,SOURCE EXISTS,,,,fa36e291f5dba96f9826805903e669b95f5eebcaf20edb75beb181049099722f,1795,2026-08-06T05:48:42Z
+MIT/tests/test_generator_counts_6d.py,test_generator_counts_6d.py,,,SOURCE EXISTS,,,,42f109ade9fb57ccfe8fcccb1287877466ffae08d51cd49fe132c7a74d7e48e0,1886,2026-08-06T05:48:44Z
+MIT/tests/test_graph_canonicalization.py,test_graph_canonicalization.py,,,SOURCE EXISTS,,,,1677b88744777b22e22d2ecd507a70921101530e323f7ca60b1bf44a2d67466a,1335,2026-08-06T05:26:36Z
+MIT/tests/test_graph_counts_6d.py,test_graph_counts_6d.py,,,SOURCE EXISTS,,,,67d071a36dfb5be6d701343c5529199e623f37ea7a2b6750ce192df429f12799,709,2026-08-06T05:26:43Z
+MIT/tests/test_graph_weighted_degree.py,test_graph_weighted_degree.py,,,SOURCE EXISTS,,,,01981488cc24d6c940be4e5b1d2fc8ce175cd479eab802fd9f9a270ab1198949,1339,2026-08-06T05:26:33Z
+MIT/tests/test_graphs_6d.py,test_graphs_6d.py,,,SOURCE EXISTS,,,,470bd9cd68c025b680c69e023b9429eea3eb11b8110579f11b15812a22233e5b,4730,2026-07-27T22:48:47Z
+MIT/tests/test_hodge10.py,test_hodge10.py,,,SOURCE EXISTS,,,,2a9b9c5716523f88ba7eab7ac3204ab6e4478c3c0b526e92e1217ce37df2de10,2825,2026-07-27T22:48:47Z
+MIT/tests/test_monomial_generation.py,test_monomial_generation.py,,,SOURCE EXISTS,,,,4fd2ddaf67b6ade523b7b682f1d7deb2caad26237220afe468c84da1a5ff0add,1340,2026-08-06T05:26:56Z
+MIT/tests/test_offline_dashboard.py,test_offline_dashboard.py,,,SOURCE EXISTS,,,,b073b470c338f259091160997745300057baaaef85005bd391823b6edd4f86f6,1597,2026-07-27T22:48:47Z
+MIT/tests/test_rank_backends.py,test_rank_backends.py,,,SOURCE EXISTS,,,,2a63b57fd81a22c687862900b9890f33bd16df28b57c2c0cccdd48eebb7c8057,1450,2026-08-06T05:27:04Z
+MIT/tests/test_runner_power.py,test_runner_power.py,,,SOURCE EXISTS,,,,5123b46e0497a7d7234745595b1043058998a2a4bb741b7ee48dadb6d35d3979,2476,2026-07-27T22:48:47Z
+MIT/tests/test_self_duality_10d.py,test_self_duality_10d.py,,,SOURCE EXISTS,,,,03844765a8df0f8182a28848ca90e250278be0ec9fde78a4b477e3d4e9974435,1254,2026-08-06T05:27:15Z
+MIT/tests/test_syzygy_validation.py,test_syzygy_validation.py,,,SOURCE EXISTS,,,,7b3ace68b332dd4d67d2a4f03b5fb1b5f44da87653a8f792ea5707a2c16f03ad,1954,2026-08-06T05:27:15Z
+MIT/tests/test_tensor_antisymmetry.py,test_tensor_antisymmetry.py,,,SOURCE EXISTS,,,,32c9abb3e8af8240627048c6639dd527846f050366195ce279ba67b77207e0cf,912,2026-08-06T05:26:28Z
+MIT/ui/index.html,index.html,,,SOURCE EXISTS,,,,e5a85ed956207136d46d9a28ba7c22137f102e86d4981d9fba288c784a46c1fd,9002,2026-07-27T22:48:47Z
+MIT/ui/progress.json,progress.json,,,SOURCE EXISTS,,,,532cadca61471847b8c2f7479de70b9a92b6448dfedd905dd14cd23243793bb5,12435,2026-07-28T23:33:02Z
+Research/TenDDegree6ContractionPlanning_V1.wl,V1,Contraction plans for degree-6 graph basis batches,,NOT RUN,,REQUIRED by BatchA but FILE ABSENT from folder,,,0,

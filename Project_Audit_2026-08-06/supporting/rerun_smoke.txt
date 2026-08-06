@@ -1,0 +1,12 @@
+=== graph counts ===
+2 1
+4 2
+6 6
+=== self-duality ===
+True 0.0 0.0
+=== blind 6D through deg 6 ===
+2 graphs 1 crank 1 new 1
+4 graphs 2 crank 2 new 2
+6 graphs 6 crank 3 new 1
+degrees [2, 4, 4, 6]
+SMOKE_OK

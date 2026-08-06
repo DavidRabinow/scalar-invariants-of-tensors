@@ -1,0 +1,12 @@
+Audit package metadata
+=======================
+Generated: 2026-08-06
+PDF: TenD_SelfDual_FiveForm_Project_Audit.pdf
+PDF pages: 12
+PDF SHA-256: 0f8ebeb384a4ea9f86bc9e83abdd806734e37ef4bb3b3cd971ba2210cebda433
+PDF engine: pure-Python Type1 Courier text layout (ASCII-normalized)
+  (pandoc/pdflatex/xelatex/weasyprint unavailable; no new software installed)
+Mathematica rerun: NOT POSSIBLE (wolframscript absent)
+Python smoke rerun: YES -> SMOKE_OK (see rerun_smoke.txt)
+Unreadable/unreliable: 6D_3Form_Project.nb (no VerificationTest archive);
+  Cederwall/Hutomo PDFs not present locally (cited via arXiv only)

@@ -1,0 +1,9 @@
+{
+  "paper": "Elamaran–Ferko–Scarlett, Machine Learning Invariants of Tensors (arXiv:2512.23750)",
+  "object": "generic antisymmetric 3-form in d=6 Euclidean",
+  "graph_counts": {"2": 1, "4": 2, "6": 6, "8": 20},
+  "connected_ranks": {"2": 1, "4": 2, "6": 3, "8": 6},
+  "new_generators": {"2": 1, "4": 2, "6": 1, "8": 1, "10": 0},
+  "generator_degrees": [2, 4, 4, 6, 8],
+  "degree8_lower_monomial_count": 7
+}

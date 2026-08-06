@@ -1,0 +1,17 @@
+File,Test_ID,Expected_result,Observed_result,Run_status,Arithmetic_type,What_it_establishes,What_it_does_not_establish
+AntisymmetricPForms.wl,aggregate/TestReport,all VerificationTests True / pytest pass,5/5,OBSERVED RUN,exact,Indep slots/signs,Not 6D completeness
+MetricContractions6D.wl,aggregate/TestReport,all VerificationTests True / pytest pass,8/8 after fixes,OBSERVED RUN,exact,Eqs (4.1)-(4.4) + A.2a regression,Harness false fail initially
+FunctionalIndependence6D.wl,aggregate/TestReport,all VerificationTests True / pytest pass,5/5,OBSERVED RUN,exact+modular,Jacobian rank 5,Not ring generation
+AppendixRelations6D.wl,aggregate/TestReport,all VerificationTests True / pytest pass,7/7,OBSERVED RUN,exact,"A.2,A.4,A.6 on 12 holdouts",Not symbolic proof
+GraphEnumeration6D_FIXED.wl,aggregate/TestReport,all VerificationTests True / pytest pass,6/6 twice,OBSERVED RUN,exact,"Counts 1,2,6,20 ranks 1,2,3,6",Finite-sample ranks
+InvariantBenchmarks_CORRECTED_V2.wl,aggregate/TestReport,all VerificationTests True / pytest pass,12 VT,OBSERVED RUN,exact,O(4)/SO(4)/Pfaffian,Module6 only
+TenDLorentzianFoundations_V2.wl,aggregate/TestReport,all VerificationTests True / pytest pass,15 VT,OBSERVED RUN,exact/float,Hodge ★^2=+1; 126,Not invariant counts
+TenDRepresentationTargets.wl,aggregate/TestReport,all VerificationTests True / pytest pass,9 VT,OBSERVED RUN,exact series ops,Hilbert/Euler table match cited integers,Does not prove LiE
+TenDDegree4Invariants_V4.wl,aggregate/TestReport,all VerificationTests True / pytest pass,16 VT,OBSERVED RUN,exact,I4 span rank 1,Not rerun by auditor
+TenDDegree6GraphEnumeration_V1.wl,aggregate/TestReport,all VerificationTests True / pytest pass,10 VT,OBSERVED RUN,combinatorial,12043/54/49,—
+TenDDegree6Catalog_V2.wl,aggregate/TestReport,all VerificationTests True / pytest pass,12 VT,OBSERVED RUN,exact fit+holdout,54 graph coeffs; K6 signs,Fitted identities
+TenDDegree8GraphEnumeration_V1.wl,aggregate/TestReport,all VerificationTests True / pytest pass,13 VT,OBSERVED RUN,Burnside exact,1753/1689/64; 45163496,—
+TenDDegree8BasisValidation_V1.wl,aggregate/TestReport,all VerificationTests True / pytest pass,16 VT,OBSERVED RUN,exact+modular,Rank 7 on 24 fresh,Not full 1753 reduction
+TenDDegree10Foundations_V1.wl,aggregate/TestReport,all VerificationTests True / pytest pass,16 VT designed,UNKNOWN/OBSERVED RUN claimed,exact+modular,Product rank 2 target,No graph discovery
+Python test_generator_counts_6d,aggregate/TestReport,all VerificationTests True / pytest pass,6 passed,RERUN PASSED (prior session),SVD+float,Blind n_new match paper,Not exact discovery
+Python smoke 2026-08-06 audit,aggregate/TestReport,all VerificationTests True / pytest pass,"graphs 1,2,6; n_new 1,2,1; SD True",RERUN PASSED,float+combinatorial,Confirms Python path,N=8 not rerun this audit

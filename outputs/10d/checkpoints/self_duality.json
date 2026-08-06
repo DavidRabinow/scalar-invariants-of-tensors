@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "max_double_star_error": 0.0,
+  "max_projection_star_error": 0.0,
+  "n_components": 252,
+  "n_self_dual_dof": 126,
+  "star_squared": 1,
+  "signature": "lorentzian \u03b7=diag(-1,+1\u00d79)",
+  "proof_status": "strong computational evidence",
+  "_saved_at": "2026-08-06T13:07:05Z"
+}

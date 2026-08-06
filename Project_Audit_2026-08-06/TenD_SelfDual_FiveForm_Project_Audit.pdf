@@ -1,0 +1,765 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+2 0 obj
+<< /Length 3025 >>
+stream
+BT /F1 9 Tf 40 770 Td 11 TL
+(TenD Self-Dual Five-Form Project Audit) Tj
+T* () Tj
+T* (Document title: TenD_SelfDual_FiveForm_Project_Audit  ) Tj
+T* (Audit date: 2026-08-06  ) Tj
+T* (Auditor role: forensic technical audit \(documentation and provenance only\)  ) Tj
+T* (Nondestructive: no existing project files were modified, renamed, moved, overwritten, or) Tj
+T* (deleted.  ) Tj
+T* (Outputs directory: Project_Audit_2026-08-06/  ) Tj
+T* () Tj
+T* (Scopes inspected:) Tj
+T* (1. Mathematica Research folder: /Users/davidrabinow/Downloads/26-27 Prep/Stux) Tj
+T* (Technologies/Research/) Tj
+T* (2. Python MIT repository: /Users/davidrabinow/Projects/UPRSXxXCEL/Research/scalar-invariants-of) Tj
+T* (-tensors/MIT/) Tj
+T* () Tj
+T* (Primary papers:) Tj
+T* (- Elamaran-Ferko-Scarlett, Machine Learning Invariants of Tensors, arXiv:2512.23750 \(local PDF) Tj
+T* (present\).) Tj
+T* (- Cederwall-Hutomo-Kuzenko-Lechner-Sorokin, Some remarks on invariants, arXiv:2509.14350) Tj
+T* (\(cited in project notes; no local PDF found in Research folder\).) Tj
+T* (- Hutomo-Lechner-Sorokin, On non-linear chiral 4-form theories in D=10, arXiv:2509.14351) Tj
+T* (\(cited; no local PDF found\).) Tj
+T* () Tj
+T* (Mathematica availability to auditor: wolframscript / math not found. Therefore Mathematica) Tj
+T* (modules are classified OBSERVED RUN when RESEARCH_LOG / exported catalogs / TestReport design) Tj
+T* (strongly indicate prior execution, not RERUN PASSED.) Tj
+T* () Tj
+T* (Python availability: smoke rerun performed 2026-08-06 \(graphs N=2,4,6; blind discovery through) Tj
+T* (degree 6; self-duality\). Result: SMOKE_OK \(see supporting/rerun_smoke.txt\).) Tj
+T* () Tj
+T* (---) Tj
+T* () Tj
+T* (1. Executive summary) Tj
+T* () Tj
+T* (Ultimate research question) Tj
+T* () Tj
+T* (What are the independent Lorentz-scalar polynomial invariants of a real self-dual \(chiral\)) Tj
+T* (5-form \(F=F\) in ten-dimensional Lorentzian spacetime, what are their degrees and generating) Tj
+T* (structure, and what are the syzygies among candidate contractions--starting from a validated) Tj
+T* (reproduction of the six-dimensional Euclidean 3-form analysis of Elamaran-Ferko-Scarlett?) Tj
+T* () Tj
+T* (Strongest current 6D result) Tj
+T* () Tj
+T* (Strongest claim that is well supported: the project has reproduced, in exact Mathematica) Tj
+T* (arithmetic \(Gates 1-5, as recorded in RESEARCH_LOGv4.md\) and independently in a Python blind) Tj
+T* (discovery path \(tensor_invariants / outputs/6d/\), the paper's connected graph counts) Tj
+T* (\(\(1,2,6,20\)\), same-degree ranks \(\(1,2,3,6\)\), and generator-degree pattern \([2,4,4,6,8]\) for) Tj
+T* (metric-only contractions of a generic antisymmetric 3-form in Euclidean \(d=6\). Exact Jacobian) Tj
+T* (rank 5 for the five paper polynomials and exact vanishing of Appendix A relations on finite) Tj
+T* (integer holdouts are recorded for Mathematica. Python discovery ranks are primarily SVD with) Tj
+T* (modular syzygy checks.) Tj
+T* () Tj
+T* () Tj
+T* (TenD Project Audit 2026-08-06 -- p.1/12) Tj
+ET
+endstream
+endobj
+3 0 obj
+<< /Length 3436 >>
+stream
+BT /F1 9 Tf 40 770 Td 11 TL
+(Strongest current 10D result) Tj
+T* () Tj
+T* (Strongest claim that is well supported in code artifacts: Lorentzian self-duality conventions) Tj
+T* (with \(^2=+1\), 252 generic / 126 chiral components; degree-4 recovery of a 1-dimensional) Tj
+T* (invariant space identified with \(I_4=tr M^2\); degree-6 census \(12043\) labeled / \(54\) canonical) Tj
+T* (/ \(49\) connected with two independent directions \(trace and \(N^\(1050\)\)\); degree-8 Burnside) Tj
+T* (census \(1753\) canonical \(\(1689\) connected\) with a seven-dimensional validated basis including) Tj
+T* (\(I_4^2\) and six named graphs; degree-10 foundations only validating the two lower products and) Tj
+T* (stating a conditional target of 12 new directions. These 10D computational claims are OBSERVED) Tj
+T* (RUN from Mathematica sources/exports; they were not rerun by this auditor. The Python 10D path) Tj
+T* (has no generators.) Tj
+T* () Tj
+T* (Maximum degree investigated) Tj
+T* () Tj
+T* (- 6D: through degree 8 exactly \(graphs/ranks\); Appendix relations at 6 and 8; paper) Tj
+T* (stabilization through 18 is cited but not shown as executed in RESEARCH_LOG Stages 1-5. Python) Tj
+T* (checked \(n_new=0\) at degree 10 on a sample of 12 graphs.) Tj
+T* (- 10D: foundations through degree 10 products; graph discovery through degree 8; no degree-10) Tj
+T* (graph enumeration completed.) Tj
+T* () Tj
+T* (What has / has not been established) Tj
+T* () Tj
+T* (| Established \(with caveats\) | Not established |) Tj
+T* (|---|---|) Tj
+T* (| 6D paper graph counts & ranks \(exact MMA; Python match\) | Completeness of 6D five-generator) Tj
+T* (set as full invariant ring |) Tj
+T* (| 6D five polys algebraically independent \(exact Jacobian\) | Symbolic proof of Appendix A) Tj
+T* (identities |) Tj
+T* (| 10D conventions / self-duality | Independent proof of Krull dimension 81 |) Tj
+T* (| 10D low-degree Hilbert targets copied/checked as integers | That metric-only graphs exhaust) Tj
+T* (\(SO\(1,9\)\) invariants |) Tj
+T* (| Degree-8 seven-direction finite-sample certificate \(claimed\) | Reduction of all 1753) Tj
+T* (degree-8 graphs; degree-10 generators |) Tj
+T* (| | Full syzygy resolution; Hironaka decomposition; 81-parameter structure |) Tj
+T* () Tj
+T* (Most important methodological risk) Tj
+T* () Tj
+T* (Matching a published singlet dimension \(e.g. 7 at degree 8\) using metric-only graph evaluation) Tj
+T* (does not by itself prove that every \(SO\(1,9\)\) scalar built with Levi-Civita tensors reduces to) Tj
+T* (the metric-only span after \(F=F\). Without an explicit epsilon-reduction certificate for the) Tj
+T* (project's conventions, Hilbert agreement is conditional evidence of completeness, not a proof.) Tj
+T* (Secondary risks: Mathematica kernel-state contamination across Get chains; missing) Tj
+T* (TenDDegree6ContractionPlanning_V1.wl; Python 6D discovery using SVD as primary truth;) Tj
+T* (degree-10 claims easily overstated as "12 generators found" when only product rank 2 was) Tj
+T* (validated.) Tj
+T* () Tj
+T* (Estimated completion ranges \(not mathematical measurements\)) Tj
+T* () Tj
+T* (| Workstream | Estimated range | Rationale |) Tj
+T* (|---|---|---|) Tj
+T* (| 6D reproduction vs arXiv:2512.23750 ?4.1 + App. A | 85-95% | Counts, ranks, independence,) Tj
+T* (App. A holdouts done; stabilization through 18 and symbolic identities incomplete |) Tj
+T* () Tj
+T* (TenD Project Audit 2026-08-06 -- p.2/12) Tj
+ET
+endstream
+endobj
+4 0 obj
+<< /Length 2946 >>
+stream
+BT /F1 9 Tf 40 770 Td 11 TL
+(| 10D low-degree study \(deg <=8 vs Cederwall targets\) | 55-70% | Deg 4/6/8 substantial) Tj
+T* (Mathematica work + catalogs; not auditor-rerun; epsilon/SO gap; missing planning file |) Tj
+T* (| Complete ultimate project \(81-parameter generators+syzygies\) | 5-15% | Only low degrees; no) Tj
+T* (deg-10 discovery; no full syzygies; no completeness proof |) Tj
+T* () Tj
+T* (---) Tj
+T* () Tj
+T* (2. Complete file inventory) Tj
+T* () Tj
+T* (Machine-readable full inventory: TenD_Project_File_Manifest.csv \(204 rows + missing) Tj
+T* (dependency\). SHA-256 digests: supporting/sha256_all_research.txt,) Tj
+T* (supporting/sha256_mit_core.txt.) Tj
+T* () Tj
+T* (2.1 Mathematica modules \(current recommended chain\)) Tj
+T* () Tj
+T* (Use these \(latest\):) Tj
+T* (AntisymmetricPForms.wl -> MetricContractions6D.wl -> FunctionalIndependence6D.wl ->) Tj
+T* (AppendixRelations6D.wl -> GraphEnumeration6D_FIXED.wl -> InvariantBenchmarks_CORRECTED_V2.wl) Tj
+T* (-> TenDLorentzianFoundations_V2.wl -> TenDRepresentationTargets.wl ->) Tj
+T* (TenDDegree4Invariants_V4.wl -> TenDDegree6TraceInvariant_V1.wl +) Tj
+T* (TenDDegree6N1050Invariant_V2.wl + TenDDegree6GraphEnumeration_V1.wl + TenDDegree6Catalog_V2.wl) Tj
+T* (-> TenDDegree8GraphEnumeration_V1.wl + Degree8CanonicalGraphKeys.wl + discovery batches +) Tj
+T* (TenDDegree8BasisValidation_V1.wl + TenDDegree8FormulaCatalog_V1.wl ->) Tj
+T* (TenDDegree10Foundations_V1.wl.) Tj
+T* () Tj
+T* (Do not use \(obsolete / superseded\):) Tj
+T* (GraphEnumeration6D.wl; InvariantBenchmarks.wl; TenDLorentzianFoundations_V1.wl;) Tj
+T* (TenDDegree4Invariants_V1-V3.wl; TenDDegree6N1050Invariant_V1.wl;) Tj
+T* (TenDDegree6GraphBasis_FinalK6_V1.wl; TenDDegree6Catalog_V1.wl \(wrong K6 sign\); duplicate) Tj
+T* (RESEARCH_LOG copies \(byte-identical\).) Tj
+T* () Tj
+T* (Missing but required by Batch A: TenDDegree6ContractionPlanning_V1.wl -- ABSENT. Status: NOT) Tj
+T* (RUN / broken dependency for clean-kernel Batch A.) Tj
+T* () Tj
+T* (Named in audit brief but absent: MetricContractions6D_FIXED.wl, MetricContractions6D_FINAL.wl,) Tj
+T* (TensorContractionOrderingFix.wl \(axis fix absorbed into MetricContractions6D.wl / Gate 3) Tj
+T* (narrative\).) Tj
+T* () Tj
+T* (2.2 Notebook) Tj
+T* () Tj
+T* (6D_3Form_Project.nb: Mathematica notebook \(Wolfram 15.0\). Heuristic parse: 6 Cell[ markers; 0) Tj
+T* (VerificationTest strings; not a reliable stored TestReport archive. Status: UNKNOWN for) Tj
+T* (scientific outputs. Do not infer Gate results from this notebook alone.) Tj
+T* () Tj
+T* (2.3 Python MIT package) Tj
+T* () Tj
+T* (Primary science: tensor_invariants/, run_pipeline.py, outputs/6d/, outputs/10d/, reports/.  ) Tj
+T* (Legacy \(ops / superseded for discovery\): src/invariants/, src/invariant_engine/,) Tj
+T* (scripts/run_6d.py.  ) Tj
+T* (Do not treat docs/invariants_78.json as validated 10D science.) Tj
+T* () Tj
+T* (---) Tj
+T* () Tj
+T* (TenD Project Audit 2026-08-06 -- p.3/12) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Length 3284 >>
+stream
+BT /F1 9 Tf 40 770 Td 11 TL
+() Tj
+T* (3. Chronological research log) Tj
+T* () Tj
+T* (| When | Event | Outcome |) Tj
+T* (|---|---|---|) Tj
+T* (| 2026-08-03 | Stage 1: AntisymmetricPForms | 5/5 exact tests OBSERVED |) Tj
+T* (| 2026-08-03 | Stage 2: MetricContractions; AssociationMap bug | Fixed to Map[evaluate,...];) Tj
+T* (5/5 then 8 substantive True |) Tj
+T* (| 2026-08-03 | Stage 3: Jacobian; 0^0 Indeterminate; then rank-4 because \(x^\(6\)\) was \(X_1^\(6\)\)) Tj
+T* (| Axis-order / RaiseTensorIndex fix; rank 5; A.2a residual 0 |) Tj
+T* (| 2026-08-03 | Stage 4: Appendix relations | 7/7; 12 integer holdouts seed 20260804 |) Tj
+T* (| 2026-08-03 | Stage 5: Graph enum; IncidenceGraph name collision | FIXED module; counts) Tj
+T* (1,2,6,20; ranks 1,2,3,6 |) Tj
+T* (| 2026-08-03 | Literature gate for 10D | Hilbert/Euler/81 sourced; computational 10D not yet |) Tj
+T* (| 2026-08-03 | Lorentzian V1->V2; Degree4 V1->V4 | Component keys; diagonal raise Dot;) Tj
+T* (Transpose Ordering |) Tj
+T* (| 2026-08-03->05 | Degree6 enum/trace/N1050/batches/catalog | 12043/54/49; K6 sign corrected) Tj
+T* (V2 |) Tj
+T* (| 2026-08-05->06 | Degree8 Burnside, keys, discovery A-D, basis validation, formula catalog |) Tj
+T* (1753; basis 7 directions; CSV/TXT export |) Tj
+T* (| 2026-08-06 01:00 | TenDDegree10Foundations_V1.wl | Product subspace module authored |) Tj
+T* (| 2026-08-06 ~01:12-09:07 | Python MIT package + pipeline | Blind 6D PASS outputs; 10D smoke) Tj
+T* (only |) Tj
+T* () Tj
+T* (RESEARCH_LOG.md, _2, v3, v4 are byte-identical \(MD5 431f853d...\) and stop at Stage 5 / Module) Tj
+T* (6 plan--they do not document 10D degree work. Provenance for 10D is filename versions +) Tj
+T* (exported catalogs + module Print banners.) Tj
+T* () Tj
+T* (---) Tj
+T* () Tj
+T* (4. Reconstruction of the paper's method \(arXiv:2512.23750 ??2-4\)) Tj
+T* () Tj
+T* (Encoding and enumeration) Tj
+T* (Contractions of an antisymmetric \(p\)-form with the metric are encoded as loopless weighted) Tj
+T* (multigraphs with vertex weighted degree \(p\) \(for 3-forms: 3-regular\). Edge weight = number of) Tj
+T* (contracted index pairs. Self-loops are excluded by antisymmetry. The paper prefers connected) Tj
+T* (graphs; disconnected graphs factorize into products \(secondary / composite invariants\).) Tj
+T* () Tj
+T* (Isomorphism and evaluation) Tj
+T* (Graphs are reduced up to isomorphism \(paper: VF2-style\). Random tensors are sampled;) Tj
+T* (contractions evaluated; fixed-degree linear dependence is extracted from numerical evaluation) Tj
+T* (matrices \(paper: floating-point SVD nullspaces\). New primary generators are those independent) Tj
+T* (of polynomials in lower-degree invariants. Syzygies are reconstructed from null vectors and) Tj
+T* (validated on fresh samples. Stabilization over several degrees is heuristic evidence, not a) Tj
+T* (completeness proof \(? paper discussion / project RESEARCH_LOG caution\).) Tj
+T* () Tj
+T* (Project differences from the paper) Tj
+T* (| Paper | This project |) Tj
+T* (|---|---|) Tj
+T* (| Floating-point SVD discovery | Mathematica exact/modular ranks; Python SVD + modular) Tj
+T* (syzygies |) Tj
+T* (| igraph isomorphism | MMA CanonicalGraph incidence encoding; Python NetworkX / min-lex |) Tj
+T* () Tj
+T* (TenD Project Audit 2026-08-06 -- p.4/12) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Length 1991 >>
+stream
+BT /F1 9 Tf 40 770 Td 11 TL
+(| Numerical syzygy rationalization | Exact holdouts \(MMA App. A\); Python CRT/Farey candidates |) Tj
+T* () Tj
+T* (---) Tj
+T* () Tj
+T* (5. Six-dimensional reproduction) Tj
+T* () Tj
+T* (Definitions \(paper Eqs. \(4.1\)-\(4.4\); Mathematica MetricContractions6D.wl\)) Tj
+T* () Tj
+T* ([) Tj
+T* (aligned) Tj
+T* (x^\(2\) &= H_abcH^abc,\\\\) Tj
+T* (x^\(4\)_1 &= H_abcH_adeH^defH^bc_f,\\\\) Tj
+T* (x^\(4\)_2 &= H_abcH_adeH^cefH^bd_f,\\\\) Tj
+T* (x^\(6\) &= H_abcH^chiH_ghiH^adgH_defH^bef,\\\\) Tj
+T* (x^\(8\) &= H_abcH^bciH_ghiH^gjkH_jklH^fhlH_defH^ade.) Tj
+T* (aligned) Tj
+T* (]) Tj
+T* () Tj
+T* (\(Index raising with Euclidean \(\).\) Mathematica stores contraction specs as paired index lists,) Tj
+T* (e.g. "x^\(2\)" -> "a","b","c","a","b","c".) Tj
+T* () Tj
+T* (Counts vs paper ?4.1) Tj
+T* () Tj
+T* (| Degree | Connected graphs \(paper\) | Project MMA Gate5 | Project Python |) Tj
+T* (|---:|---:|---:|---:|) Tj
+T* (| 2 | 1 | 1 | 1 |) Tj
+T* (| 4 | 2 | 2 | 2 |) Tj
+T* (| 6 | 6 | 6 | 6 |) Tj
+T* (| 8 | 20 | 20 | 20 |) Tj
+T* () Tj
+T* (| Degree | Connected rank \(paper\) | MMA | Python |) Tj
+T* (|---:|---:|---:|---:|) Tj
+T* (| 2 | 1 | 1 | 1 |) Tj
+T* (| 4 | 2 | 2 | 2 |) Tj
+T* (| 6 | 3 | 3 | 3 |) Tj
+T* (| 8 | 6 | 6 | 6 |) Tj
+T* () Tj
+T* (| Degree | New gens after products | Python blind |) Tj
+T* (|---:|---:|---:|) Tj
+T* (| 2 | 1 | 1 |) Tj
+T* (| 4 | 2 | 2 |) Tj
+T* (| 6 | 1 | 1 |) Tj
+T* (| 8 | 1 | 1 |) Tj
+T* (| 10 | 0 \(paper\) | 0 on sample of 12 |) Tj
+T* () Tj
+T* (Final degrees: \([2,4,4,6,8]\).) Tj
+T* () Tj
+T* (Jacobian / modular / Appendix) Tj
+T* (- Exact Jacobian \(520\) rank 5 over \(Q\) and primes \(1000003,1000033,1000037\) \(Gate 3\) --) Tj
+T* (REPRODUCED COMPUTATIONALLY WITH EXACT ARITHMETIC \(OBSERVED RUN\).) Tj
+T* (- Appendix \(A.2a\),\(A.2b\),\(A.4\),\(A.6\) exact zero on 12 holdouts \(Gate 4\) -- FINITE-SAMPLE) Tj
+T* (EVIDENCE ONLY \(exact arithmetic on samples != symbolic proof\).) Tj
+T* () Tj
+T* (TenD Project Audit 2026-08-06 -- p.5/12) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Length 2687 >>
+stream
+BT /F1 9 Tf 40 770 Td 11 TL
+(- Stabilization through degree 18: stated in paper; not executed in RESEARCH_LOG Stages 1-5.) Tj
+T* () Tj
+T* (Evidence labels for 6D headline) Tj
+T* (- Graph counts: REPRODUCED COMPUTATIONALLY WITH EXACT ARITHMETIC \(MMA\) + RERUN PASSED for N<=6) Tj
+T* (Python smoke.) Tj
+T* (- Algebraic independence of five polys: REPRODUCED COMPUTATIONALLY WITH EXACT ARITHMETIC) Tj
+T* (\(Jacobian\) => independence in characteristic zero at tested point; not completeness.) Tj
+T* (- Python blind \(n_new\): SUPPORTED ONLY BY FLOATING-POINT NUMERICS \(SVD\), cross-checked by) Tj
+T* (tests.) Tj
+T* () Tj
+T* (---) Tj
+T* () Tj
+T* (6. Benchmarks) Tj
+T* () Tj
+T* (InvariantBenchmarks_CORRECTED_V2.wl \(12 VerificationTests; OBSERVED RUN\): one/two vectors) Tj
+T* (under \(O\(d\)\); real antisymmetric 2-form in 4D under \(SO\(4\)\) and \(O\(4\)\).) Tj
+T* () Tj
+T* (Pfaffian: \(P=18_abcdF^abF^cd\) is an \(SO\(4\)\) invariant. Under orientation-reversing \(O\(4\)\)) Tj
+T* (elements, \(\) flips sign, so \(P\) is a pseudoscalar \(changes sign\) and is not an \(O\(4\)\)) Tj
+T* (invariant. The corrected module's TestID explicitly distinguishes \(SO\(4\)\) from \(O\(4\)\). Earlier) Tj
+T* (InvariantBenchmarks.wl had a missing Dot \(DiagonalMatrix[...] Reverse[...]\) and is SUPERSEDED*.) Tj
+T* () Tj
+T* (No separate self-dual 3-form benchmark module beyond this path was identified as current.) Tj
+T* () Tj
+T* (---) Tj
+T* () Tj
+T* (7. Ten-dimensional mathematical formulation) Tj
+T* () Tj
+T* (Conventions \(project\)) Tj
+T* (- Metric: \(=diag\(-1,+1^9\)\) \(mostly plus\).) Tj
+T* (- Indices: \(0,,9\); time = 0.) Tj
+T* (- Orientation: \(_0123456789=+1\).) Tj
+T* (- Hodge: \(\(F\)__1_5=15!__1_5_1_5F^_1_5\).) Tj
+T* (- Chirality: \(F=F\).) Tj
+T* () Tj
+T* (\(^2\) formula) Tj
+T* ([) Tj
+T* (^2 = \(-1\)^p\(D-p\)+t.) Tj
+T* (]) Tj
+T* (For \(\(D,p,t\)=\(10,5,1\)\): \(p\(D-p\)+t=25+1=26\) even => \(^2=+1\) => real \(\) eigenspaces of dimension) Tj
+T* (\(252/2=126\).  ) Tj
+T* (Euclidean \(t=0\): \(^2=-1\) => eigenvalues \( i\); no nonzero real self-dual 5-form.) Tj
+T* () Tj
+T* (Group-theoretic facts) Tj
+T* (- \( SO\(1,9\)=45\).) Tj
+T* (- \(126-45=81\) equals the Krull dimension only if the generic stabilizer is trivial -- STATED) Tj
+T* (IN A CITED PRIMARY SOURCE \(Cederwall et al.\), UNRESOLVED as an independent project proof.) Tj
+T* (- Orientation reversal in \(O\(1,9\)\) exchanges chiralities => fixed-chirality problem is) Tj
+T* (naturally \(SO\(1,9\)\), not full \(O\(1,9\)\).) Tj
+T* (- Quadratic \(F__1_5F^_1_5=0\) for self-dual odd middle forms -- ESTABLISHED ANALYTICALLY \(and) Tj
+T* (cited\).) Tj
+T* () Tj
+T* () Tj
+T* (TenD Project Audit 2026-08-06 -- p.6/12) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Length 2676 >>
+stream
+BT /F1 9 Tf 40 770 Td 11 TL
+(Distinctions) Tj
+T* (Chiral 4-form potential \(A_4\) != field strength \(F_5=dA_4\) != generic 5-form != self-dual) Tj
+T* (projection. Invariant Lagrangians without derivatives are polynomials in \(F_5\).) Tj
+T* () Tj
+T* (---) Tj
+T* () Tj
+T* (8. Representation-theory targets) Tj
+T* () Tj
+T* (From TenDChiralFiveForm_Representation_Literature_Gate.md and TenDRepresentationTargets.wl) Tj
+T* (\(checks series conversion; does not re-run LiE\):) Tj
+T* () Tj
+T* (Hilbert \(Cederwall Eq. \(4.2\)\):  ) Tj
+T* (\(1 + t^4 + 2t^6 + 7t^8 + 14t^10 + 72t^12 + \)) Tj
+T* () Tj
+T* (Euler/plethystic initial balances: \(\(m_4,\)=\(1,2,6,12,62,\)\).) Tj
+T* () Tj
+T* (Source caveats: counts are for the complexified chiral \(126\) of \(SO\(10,C\)\) \(Dynkin \(00002\)\).) Tj
+T* (Identifying them with real \(SO\(1,9\)\) metric-only graph spans requires additional hypotheses) Tj
+T* (\(complexification, epsilon reduction\). Positive Euler coefficients are net generator-relation) Tj
+T* (balances, not automatically raw generator counts. Sum of first five positive Euler exponents) Tj
+T* (\(=83>81\) => relations must exist if the cited data hold.) Tj
+T* () Tj
+T* (---) Tj
+T* () Tj
+T* (9. Degree-by-degree 10D results) Tj
+T* () Tj
+T* (| Degree | Published singlets | Labeled | Canonical | Connected | Exact span rank \(claimed\) |) Tj
+T* (Lower product rank | New quotient | Status |) Tj
+T* (|---:|---:|---:|---:|---:|---:|---:|---:|---|) Tj
+T* (| 2 | 0 | -- | -- | -- | 0 \(vanishes\) | 0 | 0 | Analytic + conventions |) Tj
+T* (| 4 | 1 | 21 | 5 | 4 | 1 | 0 | 1 | OBSERVED RUN V4 |) Tj
+T* (| 6 | 2 | 12043 | 54 | 49 \(+5 disc.\) | 2 | 0 | 2 | OBSERVED RUN; Catalog_V2 |) Tj
+T* (| 8 | 7 | 45163496 | 1753 | 1689 \(+64 disc.\) | 7 | 1 \(\(I_4^2\)\) | 6 | OBSERVED RUN; basis) Tj
+T* (validation |) Tj
+T* (| 10 | 14 | -- | -- | -- | products rank 2 claimed | 2 | target 12 | Foundations only; no) Tj
+T* (graph discovery |) Tj
+T* () Tj
+T* (Degree 4) Tj
+T* (Invariant \(I_4=tr M^2\) with \(M_^ = F__1_2_3_4F^_1_2_3_4\) \(factorial normalizations as in) Tj
+T* (formula catalog\). Graph+I4 span rank 1 claimed.) Tj
+T* () Tj
+T* (Degree 6) Tj
+T* (Two independents: \(I_6^\(1\)=tr M^3\) and \(I_6^\(2\)\) from \(N^\(1050\)\) cubic \(Hutomo/Cederwall\).) Tj
+T* (Catalog CSV: 54 graphs; K6 coefficients corrected to \(\\-17/1152,\\ 125/4\\\) in V2. Some graph) Tj
+T* (relations fitted on samples with holdout residuals recorded--not symbolic proofs.) Tj
+T* () Tj
+T* (Degree 8 -- seven validated basis directions) Tj
+T* (1. \(I_4^2\)) Tj
+T* (2. Graph 3) Tj
+T* (3. Graph 249) Tj
+T* (4. Graph 508) Tj
+T* (5. Graph 61) Tj
+T* () Tj
+T* (TenD Project Audit 2026-08-06 -- p.7/12) Tj
+ET
+endstream
+endobj
+9 0 obj
+<< /Length 2982 >>
+stream
+BT /F1 9 Tf 40 770 Td 11 TL
+(6. Graph 376) Tj
+T* (7. Graph 528) Tj
+T* () Tj
+T* (Explicit keys, adjacency matrices, and Einstein/metric contractions:) Tj
+T* (TenDDegree8InvariantFormulaCatalog.txt \(copied to supporting/\). Claimed: exact & modular rank) Tj
+T* (7 on 24 fresh tensors and on each 8-sample block. Not all 1753 graphs were necessarily) Tj
+T* (evaluated for reduction; discovery used batched peak-rank/work filters. Matching published) Tj
+T* (dimension 7 is conditional completeness evidence.) Tj
+T* () Tj
+T* (Degree 10) Tj
+T* (TenDDegree10Foundations_V1.wl is designed to run 16 VerificationTests validating products \(I_4) Tj
+T* (I_6^\(1\)\) and \(I_4 I_6^\(2\)\) have rank 2, hence conditional new-direction target 12 given) Tj
+T* (published dim 14. This auditor did not observe a stored TestReport output file proving it was) Tj
+T* (run; classify as SOURCE EXISTS / designed OBSERVED RUN unknown. Do not claim twelve degree-10) Tj
+T* (generators have been found.) Tj
+T* () Tj
+T* (Python explore-10d: only N=2 \(1 graph\) and N=4 \(4 graphs\) 5-regular censuses + self-duality.) Tj
+T* () Tj
+T* (---) Tj
+T* () Tj
+T* (10. SO versus O and epsilon-tensor audit) Tj
+T* () Tj
+T* (| Layer | Status |) Tj
+T* (|---|---|) Tj
+T* (| Analytic: even number of \(\) reduces to metrics | ESTABLISHED ANALYTICALLY \(standard\) |) Tj
+T* (| Analytic: saturating one \(\) on five indices of self-dual \(F\) replaces by metric form |) Tj
+T* (ESTABLISHED ANALYTICALLY in saturated case; Cederwall App. C |) Tj
+T* (| Project computational proof that every \(SO\(1,9\)\) scalar with \(\) reduces to metric-only) Tj
+T* (graphs under project conventions | UNRESOLVED |) Tj
+T* (| Hilbert match at deg 8 => completeness without epsilon audit | Unsafe; requires hypotheses) Tj
+T* (that \(i\) cited singlets apply to the same real representation & allowed tensors, and \(ii\)) Tj
+T* (epsilon sectors add nothing new after \(F=F\) |) Tj
+T* () Tj
+T* (Metric-only enumeration might omit orientation-sensitive invariants if reduction fails. Fixed) Tj
+T* (chirality is an \(SO\) problem; Pfaffian-like lessons from 4D benchmarks apply.) Tj
+T* () Tj
+T* (---) Tj
+T* () Tj
+T* (11. Graph canonicalization and antisymmetry-sign audit) Tj
+T* () Tj
+T* (- Topology determines a contraction only up to sign and slot wiring; modules assign fixed) Tj
+T* (vertex index labels \(see formula catalog\).) Tj
+T* (- Canonicalization via incidence multigraphs aims to preserve multiplicities; whether all odd) Tj
+T* (automorphisms forcing vanishing were proved symbolically vs detected on samples is not) Tj
+T* (uniformly documented--many vanishings are sample/fit based \(Catalog flags\).) Tj
+T* (- Degree8CanonicalGraphKeys.wl SHA-256 proves file identity, not mathematical completeness of) Tj
+T* (the orbit list.) Tj
+T* (- Python N<=8 uses exact min-lex labels; N>8 uses fingerprints \(weaker\).) Tj
+T* () Tj
+T* (---) Tj
+T* () Tj
+T* (12. Claims register) Tj
+T* () Tj
+T* (TenD Project Audit 2026-08-06 -- p.8/12) Tj
+ET
+endstream
+endobj
+10 0 obj
+<< /Length 2714 >>
+stream
+BT /F1 9 Tf 40 770 Td 11 TL
+() Tj
+T* (See TenD_Project_Claims_Register.csv \(18 major claims with evidence labels\).) Tj
+T* () Tj
+T* (---) Tj
+T* () Tj
+T* (13. Test register) Tj
+T* () Tj
+T* (See TenD_Project_Test_Register.csv.  ) Tj
+T* (Critical: a green TestReport after loading many files into one kernel may depend on leftover) Tj
+T* (DownValues. Modules should be retested in a fresh kernel with documented Get order. Auditor) Tj
+T* (could not execute Wolfram.) Tj
+T* () Tj
+T* (---) Tj
+T* () Tj
+T* (14. Failures and discrepancies) Tj
+T* () Tj
+T* (| Symptom | Root cause | Corrected by | Downstream regenerated? |) Tj
+T* (|---|---|---|---|) Tj
+T* (| Module2 AssociationMap failures | Rule-wise Map over Association | Map[evaluate, specs] in) Tj
+T* (MetricContractions | Yes \(Gate2 pass\) |) Tj
+T* (| Jacobian Indeterminate | \(0^0\) | Explicit degree-0 row = 1 | Yes |) Tj
+T* (| Jacobian rank 4 | Wrong \(x^\(6\)\) \(= \(X_1^\(6\)\)\); axis order | TensorContract axis fix;) Tj
+T* (RaiseTensorIndex | Yes; Gate3 rank5 |) Tj
+T* (| GraphEnumeration load fail | IncidenceGraph protected | _FIXED rename | Yes Gate5 |) Tj
+T* (| Benchmarks matrix bug | Missing Dot | _CORRECTED_V2 | Yes |) Tj
+T* (| Lorentzian missing components | Incomplete association keys | V2 Lookup fill | Yes |) Tj
+T* (| Degree4 wrong raise/transpose | Diagonal raise; Ordering | V3/V4 | Yes |) Tj
+T* (| Degree6 K6 wrong sign | Catalog V1 | Catalog V2 -17/1152 | Catalog regenerated; confirm) Tj
+T* (batches refreshed |) Tj
+T* (| Missing ContractionPlanning | File absent | Unresolved | Batch A cannot clean-start |) Tj
+T* (| Python initial audit: ladder omitted \(P_N\) | Design bug | tensor_invariants product quotient) Tj
+T* (| Yes 2026-08-06 |) Tj
+T* (| Legacy docs 78/81 | Autonomous climb | Not authoritative | Do not use |) Tj
+T* () Tj
+T* (---) Tj
+T* () Tj
+T* (15. Reproducibility audit) Tj
+T* () Tj
+T* (| Item | Finding |) Tj
+T* (|---|---|) Tj
+T* (| Required Mathematica | Logs cite Wolfram 15.0.1 |) Tj
+T* (| Auditor OS | macOS; Wolfram not installed in PATH |) Tj
+T* (| Clean-kernel 6D | Load FIXED chain in order ?2.1; expect Gate5 ~2-3 min enum |) Tj
+T* (| Clean-kernel 10D deg8 | Needs keys file + planning + batches; high memory/time \(45M labeled) Tj
+T* (class size combinatorial\) |) Tj
+T* (| Python | pip install -r requirements.txt; python run_pipeline.py reproduce-6d |) Tj
+T* (| Random seeds | App.A holdouts 20260804; D10 foundations seeds 20261601-20261606; Python) Tj
+T* (pipeline seeds in configs |) Tj
+T* (| Missing dependency | TenDDegree6ContractionPlanning_V1.wl |) Tj
+T* (| External packages | None beyond Wolfram / Python reqs |) Tj
+T* () Tj
+T* (---) Tj
+T* () Tj
+T* (TenD Project Audit 2026-08-06 -- p.9/12) Tj
+ET
+endstream
+endobj
+11 0 obj
+<< /Length 2548 >>
+stream
+BT /F1 9 Tf 40 770 Td 11 TL
+() Tj
+T* (16. Current scientific conclusions) Tj
+T* () Tj
+T* (A. Established analytically) Tj
+T* (\(^2\) sign; real self-duality in Lorentzian middle dimension; quadratic vanishing for chiral) Tj
+T* (5-form; \(SO\) vs \(O\) chirality exchange; even-\(\) reduction to metrics \(standard\).) Tj
+T* () Tj
+T* (B. Stated in primary literature) Tj
+T* (Krull 81; Hilbert/Euler table through deg 22; uniqueness of \(I_4\); two deg-6; six new deg-8;) Tj
+T* (twelve new deg-10 \(as literature targets\).) Tj
+T* () Tj
+T* (C. Reproduced exactly \(project computation; MMA OBSERVED / Python partial RERUN\)) Tj
+T* (6D graph counts; 6D ranks; 6D Jacobian rank 5; App. A finite holdouts; 10D component counts /) Tj
+T* (\(^2\) \(Python RERUN smoke\).) Tj
+T* () Tj
+T* (D. Supported by modular checks) Tj
+T* (6D Jacobian primes; claimed 10D deg8 rank7 modular; Python syzygies on validation primes.) Tj
+T* () Tj
+T* (E. Supported only on finite samples) Tj
+T* (App. A identities; many 10D graph-to-basis fits; Python SVD \(n_new\).) Tj
+T* () Tj
+T* (F. Conjectural) Tj
+T* (Legacy 78/81 JSON; any claim that metric graphs already give the full \(SO\(1,9\)\) ring.) Tj
+T* () Tj
+T* (G. Unresolved) Tj
+T* (Epsilon completeness; generic stabilizer proof; deg-10 generators; full syzygies;) Tj
+T* (Hironaka/HSOP; independent cross-language 10D reproduction.) Tj
+T* () Tj
+T* (---) Tj
+T* () Tj
+T* (17. What has not been done) Tj
+T* () Tj
+T* (- Complete reduction of all 1753 degree-8 canonical graphs onto the 7-dimensional basis  ) Tj
+T* (- Degree-10 graph enumeration and quotient search  ) Tj
+T* (- Higher-degree generators  ) Tj
+T* (- Systematic syzygy discovery with symbolic proof  ) Tj
+T* (- Generic stabilizer proof  ) Tj
+T* (- Complete \(SO\)/epsilon reduction certificate  ) Tj
+T* (- Complete primary/secondary classification and Hironaka decomposition  ) Tj
+T* (- Proof that low-degree candidates generate the full ring  ) Tj
+T* (- Full 81-parameter structure  ) Tj
+T* (- Independent cross-language 10D implementation matching Mathematica  ) Tj
+T* (- Formal machine-checkable proof  ) Tj
+T* (- Fresh-kernel retest by this auditor \(Wolfram absent\)) Tj
+T* () Tj
+T* (---) Tj
+T* () Tj
+T* (18. Recommended next steps \(gated\)) Tj
+T* () Tj
+T* (1. Fresh-kernel reproducibility -- Input: Research folder only. Module: driver notebook. Pass:) Tj
+T* (all Gate1-5 + Deg4 V4 + Deg8 BasisValidation True in new kernel. Justifies: OBSERVED->RERUN.) Tj
+T* (Unproved: 10D completeness.) Tj
+T* () Tj
+T* (TenD Project Audit 2026-08-06 -- p.10/12) Tj
+ET
+endstream
+endobj
+12 0 obj
+<< /Length 3169 >>
+stream
+BT /F1 9 Tf 40 770 Td 11 TL
+(2. \(SO\(1,9\)\)/epsilon-reduction validation -- Explicit identities under project conventions.) Tj
+T* (Pass: every tested single-\(\) scalar equals a metric graph combination exactly. Justifies:) Tj
+T* (metric-only census adequacy. Unproved: all degrees.) Tj
+T* (3. Independent exact degree-8 rank certificate -- Second implementation or exact minor export.) Tj
+T* (Pass: rank7 with exhibited minor. Justifies: stronger than finite-sample alone.) Tj
+T* (4. Independent implementation \(Python 10D\) -- Port deg4/6 evaluations. Pass: match \(I_4\), two) Tj
+T* (deg6, rank7. Justifies: cross-language evidence.) Tj
+T* (5. Degree-10 foundations RERUN -- Pass: product rank2 exact+modular. Justifies: target 12) Tj
+T* (conditional.) Tj
+T* (6. Degree-10 graph enumeration + quotient -- Pass: span rank14 with 12 new beyond products or) Tj
+T* (documented obstruction. Justifies: computational match to Hilbert 14.) Tj
+T* (7. Syzygy discovery + holdout -- Pass: relations validate on unused primes/samples. Justifies:) Tj
+T* (finite-sample identities. Unproved: symbolic.) Tj
+T* () Tj
+T* (---) Tj
+T* () Tj
+T* (19. Draft publication claims) Tj
+T* () Tj
+T* (Currently safer to write) Tj
+T* (- We reproduce Elamaran et al. connected 3-regular counts \(\(1,2,6,20\)\) and ranks \(\(1,2,3,6\)\)) Tj
+T* (for the Euclidean 6D 3-form, and recover generator degrees \([2,4,4,6,8]\) by product) Tj
+T* (quotienting \(Python numerical; Mathematica exact ranks\).) Tj
+T* (- The five paper polynomials are algebraically independent \(exact Jacobian rank 5 at a tested) Tj
+T* (integer point\).) Tj
+T* (- Appendix A relations vanish exactly on tested integer holdouts \(not a symbolic proof\).) Tj
+T* (- For Lorentzian self-dual 5-forms with stated conventions, \(^2=+1\) and there are 126 real) Tj
+T* (chiral components; the quadratic invariant vanishes.) Tj
+T* (- Literature targets \(Cederwall\): Hilbert coefficients and Krull dimension 81 are adopted as) Tj
+T* (cited, not re-proved.) Tj
+T* (- Computational evidence \(Mathematica, not auditor-rerun\) supports dim 1,2,7 at degrees 4,6,8) Tj
+T* (for metric-only graphs, with an explicit 7-direction degree-8 basis catalogued.) Tj
+T* () Tj
+T* (Currently unsafe / overstated) Tj
+T* (- "We proved the invariant ring is generated by five elements in 6D.") Tj
+T* (- "We proved Krull dimension 81.") Tj
+T* (- "Metric-only graphs are complete for \(SO\(1,9\)\).") Tj
+T* (- "We found twelve degree-10 generators.") Tj
+T* (- "Degree-8 matching Hilbert 7 proves completeness.") Tj
+T* (- "78 of 81 invariants found" \(docs/invariants_78.json\).) Tj
+T* (- "Green TestReport => mathematical completeness.") Tj
+T* () Tj
+T* (---) Tj
+T* () Tj
+T* (20. Appendices) Tj
+T* () Tj
+T* (- TenD_Project_File_Manifest.csv  ) Tj
+T* (- TenD_Project_Claims_Register.csv  ) Tj
+T* (- TenD_Project_Test_Register.csv  ) Tj
+T* (- supporting/ -- logs, catalogs, MIT outputs, hashes, smoke rerun  ) Tj
+T* (- Environment: Python 3.13 venv with project requirements; Wolfram absent from PATH  ) Tj
+T* (- PDF engine: pure-Python text PDF writer \(no TeX/pandoc installed\)) Tj
+T* () Tj
+T* () Tj
+T* (TenD Project Audit 2026-08-06 -- p.11/12) Tj
+ET
+endstream
+endobj
+13 0 obj
+<< /Length 135 >>
+stream
+BT /F1 9 Tf 40 770 Td 11 TL
+(---) Tj
+T* () Tj
+T* (End of audit report.) Tj
+T* () Tj
+T* (TenD Project Audit 2026-08-06 -- p.12/12) Tj
+ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 26 0 R /MediaBox [0 0 612 792] /Contents 2 0 R /Resources << /Font << /F1 1 0 R >> >> >>
+endobj
+15 0 obj
+<< /Type /Page /Parent 26 0 R /MediaBox [0 0 612 792] /Contents 3 0 R /Resources << /Font << /F1 1 0 R >> >> >>
+endobj
+16 0 obj
+<< /Type /Page /Parent 26 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 1 0 R >> >> >>
+endobj
+17 0 obj
+<< /Type /Page /Parent 26 0 R /MediaBox [0 0 612 792] /Contents 5 0 R /Resources << /Font << /F1 1 0 R >> >> >>
+endobj
+18 0 obj
+<< /Type /Page /Parent 26 0 R /MediaBox [0 0 612 792] /Contents 6 0 R /Resources << /Font << /F1 1 0 R >> >> >>
+endobj
+19 0 obj
+<< /Type /Page /Parent 26 0 R /MediaBox [0 0 612 792] /Contents 7 0 R /Resources << /Font << /F1 1 0 R >> >> >>
+endobj
+20 0 obj
+<< /Type /Page /Parent 26 0 R /MediaBox [0 0 612 792] /Contents 8 0 R /Resources << /Font << /F1 1 0 R >> >> >>
+endobj
+21 0 obj
+<< /Type /Page /Parent 26 0 R /MediaBox [0 0 612 792] /Contents 9 0 R /Resources << /Font << /F1 1 0 R >> >> >>
+endobj
+22 0 obj
+<< /Type /Page /Parent 26 0 R /MediaBox [0 0 612 792] /Contents 10 0 R /Resources << /Font << /F1 1 0 R >> >> >>
+endobj
+23 0 obj
+<< /Type /Page /Parent 26 0 R /MediaBox [0 0 612 792] /Contents 11 0 R /Resources << /Font << /F1 1 0 R >> >> >>
+endobj
+24 0 obj
+<< /Type /Page /Parent 26 0 R /MediaBox [0 0 612 792] /Contents 12 0 R /Resources << /Font << /F1 1 0 R >> >> >>
+endobj
+25 0 obj
+<< /Type /Page /Parent 26 0 R /MediaBox [0 0 612 792] /Contents 13 0 R /Resources << /Font << /F1 1 0 R >> >> >>
+endobj
+26 0 obj
+<< /Type /Pages /Kids [14 0 R 15 0 R 16 0 R 17 0 R 18 0 R 19 0 R 20 0 R 21 0 R 22 0 R 23 0 R 24 0 R 25 0 R] /Count 12 >>
+endobj
+27 0 obj
+<< /Type /Catalog /Pages 26 0 R >>
+endobj
+xref
+0 28
+0000000000 65535 f 
+0000000015 00000 n 
+0000000083 00000 n 
+0000003160 00000 n 
+0000006648 00000 n 
+0000009646 00000 n 
+0000012982 00000 n 
+0000015025 00000 n 
+0000017764 00000 n 
+0000020492 00000 n 
+0000023526 00000 n 
+0000026293 00000 n 
+0000028894 00000 n 
+0000032116 00000 n 
+0000032303 00000 n 
+0000032431 00000 n 
+0000032559 00000 n 
+0000032687 00000 n 
+0000032815 00000 n 
+0000032943 00000 n 
+0000033071 00000 n 
+0000033199 00000 n 
+0000033327 00000 n 
+0000033456 00000 n 
+0000033585 00000 n 
+0000033714 00000 n 
+0000033843 00000 n 
+0000033980 00000 n 
+trailer
+<< /Size 28 /Root 27 0 R >>
+startxref
+34031
+%%EOF

@@ -1,0 +1,21 @@
+name: three_form_6d
+dim: 6
+form_degree: 3
+signature: euclidean
+field: real
+allow_epsilon: false
+self_dual: false
+symmetry_group: SO(6)
+seed: 1
+n_discovery_samples: 80
+n_validation_samples: 64
+max_degree: 10
+notes: Generic antisymmetric 3-form in six Euclidean dimensions (paper §4.1).
+discovery_primes:
+  - 1000003
+  - 1000033
+  - 1000037
+validation_primes:
+  - 1000039
+  - 1000081
+  - 1000151

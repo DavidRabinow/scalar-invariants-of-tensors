@@ -1,0 +1,87 @@
+{
+  "2": {
+    "n_graphs": 1,
+    "connected_rank": 1,
+    "n_lower_monomials": 0,
+    "rank_P": 0,
+    "rank_PC": 1,
+    "n_new": 1,
+    "monomial_names": [],
+    "backend": "svd",
+    "proof_status": "strong computational evidence",
+    "elapsed_sec": 0.05684018135070801
+  },
+  "4": {
+    "n_graphs": 2,
+    "connected_rank": 2,
+    "n_lower_monomials": 1,
+    "rank_P": 1,
+    "rank_PC": 3,
+    "n_new": 2,
+    "monomial_names": [
+      "g^(2)*g^(2)"
+    ],
+    "backend": "svd",
+    "proof_status": "strong computational evidence",
+    "elapsed_sec": 0.02994990348815918
+  },
+  "6": {
+    "n_graphs": 6,
+    "connected_rank": 3,
+    "n_lower_monomials": 3,
+    "rank_P": 3,
+    "rank_PC": 4,
+    "n_new": 1,
+    "monomial_names": [
+      "g^(2)*g^(2)*g^(2)",
+      "g^(2)*g^(4)_1",
+      "g^(2)*g^(4)_2"
+    ],
+    "backend": "svd",
+    "proof_status": "strong computational evidence",
+    "elapsed_sec": 0.14102816581726074
+  },
+  "8": {
+    "n_graphs": 20,
+    "connected_rank": 6,
+    "n_lower_monomials": 7,
+    "rank_P": 7,
+    "rank_PC": 8,
+    "n_new": 1,
+    "monomial_names": [
+      "g^(2)*g^(2)*g^(2)*g^(2)",
+      "g^(2)*g^(2)*g^(4)_1",
+      "g^(2)*g^(2)*g^(4)_2",
+      "g^(2)*g^(6)",
+      "g^(4)_1*g^(4)_1",
+      "g^(4)_1*g^(4)_2",
+      "g^(4)_2*g^(4)_2"
+    ],
+    "backend": "svd",
+    "proof_status": "strong computational evidence",
+    "elapsed_sec": 7.054863214492798
+  },
+  "10": {
+    "n_graphs": 12,
+    "connected_rank": 8,
+    "n_lower_monomials": 10,
+    "rank_P": 10,
+    "rank_PC": 10,
+    "n_new": 0,
+    "monomial_names": [
+      "g^(2)*g^(2)*g^(2)*g^(2)*g^(2)",
+      "g^(2)*g^(2)*g^(2)*g^(4)_1",
+      "g^(2)*g^(2)*g^(2)*g^(4)_2",
+      "g^(2)*g^(2)*g^(6)",
+      "g^(2)*g^(4)_1*g^(4)_1",
+      "g^(2)*g^(4)_1*g^(4)_2",
+      "g^(2)*g^(4)_2*g^(4)_2",
+      "g^(2)*g^(8)",
+      "g^(4)_1*g^(6)",
+      "g^(4)_2*g^(6)"
+    ],
+    "backend": "svd",
+    "proof_status": "strong computational evidence",
+    "elapsed_sec": 0.09046506881713867
+  }
+}
