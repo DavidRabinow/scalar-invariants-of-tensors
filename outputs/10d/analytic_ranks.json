@@ -1,0 +1,23 @@
+{
+  "n_samples": 64,
+  "seed": 0,
+  "trace_sector_rank_trM2_to_trM10": 9,
+  "literature_trace_sector_independent": 9,
+  "degree4_rank_I4": 1,
+  "degree6_rank_trM3_alone": 1,
+  "degree8_rank_I4sq_and_trM4": 2,
+  "degree10_rank_I4trM3_and_trM5": 2,
+  "literature_singlet_dims": {
+    "4": 1,
+    "6": 2,
+    "8": 7,
+    "10": 14
+  },
+  "proof_status": "strong computational evidence",
+  "limitations": [
+    "N^{(1050)} cubic not yet ported; degree-6 analytic span here is 1-dimensional.",
+    "Trace sector does not generate the full ring.",
+    "Krull dimension 81 is a cited theorem, not re-proved here."
+  ],
+  "elapsed_sec": 0.3039720058441162
+}

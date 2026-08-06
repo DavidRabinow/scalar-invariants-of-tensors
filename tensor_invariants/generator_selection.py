@@ -23,7 +23,7 @@ from typing import Any, Callable, Literal, Sequence
 import numpy as np
 
 from .antisymmetric_tensors import random_antisymmetric_form
-from .contraction_compiler import make_evaluator
+from .contraction_compiler import make_evaluator, make_metric_evaluator
 from .finite_field import DEFAULT_DISCOVERY_PRIMES
 from .graph_enumeration import (
     ContractionGraph,
@@ -32,7 +32,8 @@ from .graph_enumeration import (
 )
 from .monomial_basis import NamedGenerator, evaluate_monomial_row, weighted_monomials
 from .nullspace import rank_mod_p
-from .numerical_rank import svd_rank
+from .numerical_rank import svd_rank, zero_small_columns
+from .tensor_spaces import metric_diagonal
 
 logger = logging.getLogger(__name__)
 
@@ -60,6 +61,7 @@ class DiscoveryState:
     generators: list[NamedGenerator] = field(default_factory=list)
     reports: list[DegreeReport] = field(default_factory=list)
     graphs_by_degree: dict[int, list[ContractionGraph]] = field(default_factory=dict)
+    extras: dict[str, Any] = field(default_factory=dict)
 
     @property
     def degrees(self) -> list[int]:
@@ -71,12 +73,17 @@ def _build_matrices(
     gens: Sequence[NamedGenerator],
     degree: int,
     tensors: Sequence[np.ndarray],
+    *,
+    metric_diag: np.ndarray | None = None,
 ) -> tuple[np.ndarray, np.ndarray, list[str], list[Any]]:
     monos = weighted_monomials(gens, degree)
     evaluators = []
     ids = []
     for g in graphs:
-        _, ev = make_evaluator(g)
+        if metric_diag is None:
+            _, ev = make_evaluator(g)
+        else:
+            _, ev = make_metric_evaluator(g, metric_diag)
         evaluators.append(ev)
         ids.append(g.canonical_id)
 
@@ -94,17 +101,20 @@ def _build_matrices(
 def _rank(M: np.ndarray, backend: str, primes: Sequence[int]) -> int:
     if M.size == 0:
         return 0
+    # Drop analytically-vanishing / float-noise columns before ranking.
+    M = zero_small_columns(M)
     if backend == "svd":
-        return svd_rank(M)
+        # Absolute floor kills 1e-13 self-dual quadratic residuals.
+        return svd_rank(M, abs_tol=1e-8)
     if backend == "modp":
         # Scale floats to integers approximately — for discovery prefer integer tensors
         A = np.rint(M).astype(object) if np.allclose(M, np.rint(M), atol=1e-6) else None
         if A is None:
-            return svd_rank(M)
+            return svd_rank(M, abs_tol=1e-8)
         ranks = [rank_mod_p(A, int(p)) for p in primes]
         if len(set(ranks)) != 1:
             logger.warning("modular ranks disagree: %s; falling back to SVD", ranks)
-            return svd_rank(M)
+            return svd_rank(M, abs_tol=1e-8)
         return ranks[0]
     raise ValueError(backend)
 
@@ -236,11 +246,19 @@ def discover_degree(
     graphs: Sequence[ContractionGraph] | None = None,
     cache_dir: Path | None = DEFAULT_CACHE_DIR,
     max_graphs: int | None = None,
+    tensors: Sequence[np.ndarray] | None = None,
+    metric_diag: np.ndarray | None = None,
+    sample_if_large: bool = True,
 ) -> DegreeReport:
     """Enumerate (or use provided) graphs at ``degree`` and select new generators."""
     t0 = time.time()
     if graphs is None:
-        graphs = load_or_enumerate_graphs(degree, form_rank, cache_dir=cache_dir)
+        graphs = load_or_enumerate_graphs(
+            degree,
+            form_rank,
+            cache_dir=cache_dir,
+            sample_if_large=sample_if_large,
+        )
     if max_graphs is not None and len(graphs) > max_graphs:
         logger.warning(
             "N=%s: using first %s of %s graphs (sampling cap)",
@@ -251,15 +269,18 @@ def discover_degree(
         graphs = list(graphs)[:max_graphs]
     state.graphs_by_degree[degree] = list(graphs)
 
-    rng = np.random.default_rng(seed + 1000 * degree)
-    tensors = [
-        random_antisymmetric_form(dim, form_rank, rng, mode=sample_mode, int_bound=5)
-        for _ in range(n_samples)
-    ]
+    if tensors is None:
+        rng = np.random.default_rng(seed + 1000 * degree)
+        tensors = [
+            random_antisymmetric_form(dim, form_rank, rng, mode=sample_mode, int_bound=5)
+            for _ in range(n_samples)
+        ]
     # Convert object int tensors to float for einsum
     tensors_f = [np.asarray(T, dtype=float) for T in tensors]
 
-    P, C, ids, monos = _build_matrices(graphs, state.generators, degree, tensors_f)
+    P, C, ids, monos = _build_matrices(
+        graphs, state.generators, degree, tensors_f, metric_diag=metric_diag
+    )
     selected, rank_P, rank_PC, connected_rank = select_new_columns(
         P, C, backend=backend, primes=primes
     )
@@ -269,8 +290,11 @@ def discover_degree(
         gid = ids[j]
         name = f"g^({degree})" if n_new == 1 else f"g^({degree})_{k+1}"
 
-        def _make_ev(graph=graphs[j]):
-            _, ev = make_evaluator(graph)
+        def _make_ev(graph=graphs[j], gdiag=metric_diag):
+            if gdiag is None:
+                _, ev = make_evaluator(graph)
+            else:
+                _, ev = make_metric_evaluator(graph, gdiag)
             return ev
 
         ev = _make_ev()
@@ -332,4 +356,84 @@ def reproduce_6d(
             cache_dir=cache_dir,
             max_graphs=max_graphs,
         )
+    return state
+
+
+def _i4_tr_m2(T: np.ndarray, metric_diag: np.ndarray) -> float:
+    """I_4 = tr(M^2) with M_{μν} = F_{μ a b c d} F_ν{}^{a b c d} (raise contracted indices only)."""
+    # Raise axes 1..4 of a copy; leave the free first index lowered.
+    Tr = np.array(T, dtype=float, copy=True)
+    for ax in range(1, 5):
+        factors = np.ones(Tr.shape, dtype=float)
+        for i, s in enumerate(metric_diag):
+            sl = [slice(None)] * Tr.ndim
+            sl[ax] = i
+            factors[tuple(sl)] = float(s)
+        Tr *= factors
+    # M[μ,ν] = sum_{abcd} F[μ,abcd] F[ν,abcd] * η^{aa}…η^{dd}
+    M = np.tensordot(T, Tr, axes=([1, 2, 3, 4], [1, 2, 3, 4]))
+    # Mixed: M_μ^ν = M_{μσ} η^{σν}; for this diagonal signature η^{σσ}=η_{σσ}.
+    M_mixed = M * metric_diag[None, :]
+    return float(np.tensordot(M_mixed, M_mixed, axes=([0, 1], [1, 0])))
+
+
+def discover_10d(
+    *,
+    max_degree: int = 6,
+    n_samples: int = 32,
+    seed: int = 2,
+    backend: Literal["svd", "modp"] = "svd",
+    cache_dir: Path | None = DEFAULT_CACHE_DIR,
+) -> DiscoveryState:
+    """
+    Blind discovery for a Lorentzian self-dual 5-form in d=10.
+
+    Samples from the self-dual subspace; contracts with η=diag(-1,+1×9).
+    Does not use literature Hilbert numbers as an answer key.
+    """
+    from .self_duality import combo_to_dense, random_self_dual_5form_combo
+
+    state = DiscoveryState()
+    gdiag = metric_diagonal(10, "lorentzian")
+    rng = np.random.default_rng(seed)
+    logger.info("Sampling %s self-dual dense 5-forms (seed=%s)…", n_samples, seed)
+    tensors = [
+        combo_to_dense(random_self_dual_5form_combo(rng)) for _ in range(n_samples)
+    ]
+
+    # Exact connected censuses are cheap through N=6 for 5-forms (49 graphs).
+    for n in range(2, max_degree + 1, 2):
+        sample_if_large = n >= 8  # N=8 has ~1753 canonical graphs
+        max_graphs = 80 if n >= 8 else None
+        discover_degree(
+            n,
+            state,
+            dim=10,
+            form_rank=5,
+            n_samples=n_samples,
+            seed=seed,
+            backend=backend,
+            tensors=tensors,
+            metric_diag=gdiag,
+            cache_dir=cache_dir,
+            sample_if_large=sample_if_large,
+            max_graphs=max_graphs,
+        )
+
+    # Cross-check: selected degree-4 generator vs explicit I4=tr(M^2)
+    if any(g.degree == 4 for g in state.generators):
+        g4 = next(g for g in state.generators if g.degree == 4)
+        ratios = []
+        for T in tensors[: min(8, len(tensors))]:
+            a = float(g4.evaluate(T))
+            b = _i4_tr_m2(T, gdiag)
+            if abs(b) > 1e-12:
+                ratios.append(a / b)
+        state.extras["i4_crosscheck"] = {
+            "ratios_graph_over_I4": ratios,
+            "ratio_mean": float(np.mean(ratios)) if ratios else None,
+            "ratio_std": float(np.std(ratios)) if ratios else None,
+            "proof_status": "strong computational evidence",
+            "note": "Constant ratio ⇒ selected degree-4 graph spans the I4=tr(M^2) line.",
+        }
     return state

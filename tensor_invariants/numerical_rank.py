@@ -8,8 +8,17 @@ from typing import Sequence
 import numpy as np
 
 
-def svd_rank(matrix: np.ndarray | Sequence[Sequence[float]], tol: float | None = None) -> int:
-    """Rank via SVD with a relative singular-value tolerance."""
+def svd_rank(
+    matrix: np.ndarray | Sequence[Sequence[float]],
+    tol: float | None = None,
+    *,
+    abs_tol: float = 0.0,
+) -> int:
+    """Rank via SVD with a relative singular-value tolerance.
+
+    ``abs_tol`` floors the threshold so matrices of pure float noise
+    (e.g. 1e-13 residuals of analytically vanishing contractions) rank as 0.
+    """
     A = np.asarray(matrix, dtype=float)
     if A.size == 0:
         return 0
@@ -18,7 +27,29 @@ def svd_rank(matrix: np.ndarray | Sequence[Sequence[float]], tol: float | None =
     s = np.linalg.svd(A, compute_uv=False)
     if tol is None:
         tol = max(A.shape) * np.finfo(float).eps * (float(s[0]) if s.size else 0.0)
+    tol = max(float(tol), float(abs_tol))
     return int(np.sum(s > tol))
+
+
+def column_rms(matrix: np.ndarray) -> np.ndarray:
+    A = np.asarray(matrix, dtype=float)
+    if A.size == 0:
+        return np.zeros(0, dtype=float)
+    return np.sqrt(np.mean(A * A, axis=0))
+
+
+def zero_small_columns(matrix: np.ndarray, *, rel_floor: float = 1e-10, abs_floor: float = 1e-8) -> np.ndarray:
+    """Zero columns whose RMS is negligible vs the largest column (or abs_floor)."""
+    A = np.asarray(matrix, dtype=float).copy()
+    if A.size == 0:
+        return A
+    rms = column_rms(A)
+    scale = float(np.max(rms)) if rms.size else 0.0
+    floor = max(abs_floor, rel_floor * scale)
+    for j, r in enumerate(rms):
+        if r <= floor:
+            A[:, j] = 0.0
+    return A
 
 
 def _to_fraction_matrix(matrix: np.ndarray | Sequence[Sequence[float | int | Fraction]]) -> list[list[Fraction]]:

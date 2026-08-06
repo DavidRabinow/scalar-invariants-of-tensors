@@ -91,3 +91,41 @@ def make_evaluator(graph: ContractionGraph) -> tuple[CompiledContraction, Callab
         return compiled.evaluate_dense([T] * compiled.n_vertices)
 
     return compiled, eval_fn
+
+
+def make_metric_evaluator(
+    graph: ContractionGraph,
+    metric_diag: np.ndarray,
+) -> tuple[CompiledContraction, Callable[[np.ndarray], float]]:
+    """
+    Lorentz-invariant contraction: each identified index pair is contracted with η.
+
+    For diagonal η this is equivalent to inserting one factor η^{kk} for every
+    contracted index value k. Euclidean η=diag(1,…,1) recovers make_evaluator.
+    """
+    compiled = _cached_compile(graph.multiplicity, graph.form_rank, "pop")
+    g = np.asarray(metric_diag, dtype=float)
+    if g.ndim != 1:
+        raise ValueError("metric_diag must be 1-D diagonal components")
+
+    body = compiled.einsum_subscripts.split("->")[0]
+    letters: list[str] = []
+    seen: set[str] = set()
+    for part in body.split(","):
+        for ch in part:
+            if ch not in seen:
+                seen.add(ch)
+                letters.append(ch)
+    if not letters:
+        raise RuntimeError("compiled graph has no contracted letters")
+    einsum = body + "," + ",".join(letters) + "->"
+    n = compiled.n_vertices
+    n_letters = len(letters)
+
+    def eval_fn(T: np.ndarray) -> float:
+        from opt_einsum import contract
+
+        ops: list[np.ndarray] = [T] * n + [g] * n_letters
+        return float(contract(einsum, *ops, optimize="greedy"))
+
+    return compiled, eval_fn

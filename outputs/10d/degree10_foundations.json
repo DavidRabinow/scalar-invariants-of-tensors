@@ -1,0 +1,9 @@
+{
+  "rank_I4_I6a_I4_I6b": 2,
+  "rank_with_trM5_normalized": 3,
+  "literature_product_dim": 2,
+  "literature_total_singlets": 14,
+  "literature_new_balance": 12,
+  "proof_status": "strong computational evidence",
+  "note": "Product subspace dimension 2 verified; 12 new degree-10 generators not constructed."
+}

@@ -1,0 +1,29 @@
+{
+  "n_samples": 40,
+  "seed": 7,
+  "graph_ids": [
+    3,
+    249,
+    508,
+    61,
+    376,
+    528
+  ],
+  "rank_I4sq_plus_6graphs": 7,
+  "rank_6graphs": 6,
+  "rank_I4sq": 1,
+  "column_rms": [
+    216283008810.27634,
+    67093626453.11025,
+    1850356399.0444102,
+    1072073456.6723567,
+    54782671.24859252,
+    97006968.57769608,
+    185149282.4126855
+  ],
+  "literature_singlet_dim": 7,
+  "matches_literature": true,
+  "proof_status": "strong computational evidence",
+  "note": "Validates Mathematica degree-8 basis graphs on independent Python self-dual samples; not a full 1753-graph census.",
+  "elapsed_sec": 5.644364833831787
+}
